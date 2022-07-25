@@ -1,0 +1,20 @@
+exel,leukoregister,operation
+ID,patient_id,copy
+Diagnose,dx_details,encoding_diagnose
+Geburtsdatum,birth_year,date_to_year
+Geschlecht,gender,encoding_gender
+,residence,
+EE,ic_present,copy
+None,ic_comment,
+verstorben?,decedent,copy
+Lebensdauer M.,death_age_years,month_to_year
+,death_age_years_precision,
+Todesdatum,death_year,date_to_year
+Letzter Kontakt,last_contact_age,date_to_age
+Letzter Kontakt,last_contact_year,date_to_year
+,cause_of_death,
+,cause_death_specify,
+ID kr. Geschwisterkind,affected_sibling,check
+,affected_sibling_comments,
+ID kr. Geschwisterkind,affected_sibling_study_id,copy
+weitere rel. Erkrankungen,otherdiseases,copy
