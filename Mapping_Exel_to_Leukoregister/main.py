@@ -1,5 +1,7 @@
 import pandas as pd
 from map_demographics import mapping_demographics
+from map_diagnostic_confirmation import mapping_diagnostic_confirmation
+
 
 def mapp_exel_to_leuko_register():
     """
@@ -10,10 +12,19 @@ def mapp_exel_to_leuko_register():
     # get file name from args
     # curently as hardcoded variables drunig development
     excel_file_path = "../data/Tabelle_MLD_Datenstruktur.xlsx"
-    output_template_path = "Mapping_Exel_to_Leukoregister/mapping_csvs/output_template.csv"
-    output_file_path = "./data/mapped_data.csv"
+    output_template_path = "mapping_csvs/output_template.csv"
+    output_df = pd.read_csv(output_template_path)
     print("Mapping data...")
-    mapping_demographics(excel_file_path)
+
+    mapping_demographics(excel_file_path,output_df)
+    print("demographics mapped")
+    #mapping_diagnostic_confirmation(excel_file_path,output_df)
+
+    #TODO mapping for all the Forms
+    #save the mapped data to a csv
+    output_file_path = "./data/mapped_data.csv"
+    output_df.to_csv(output_df, index=False)
+
 
 
 if __name__ == '__main__':
