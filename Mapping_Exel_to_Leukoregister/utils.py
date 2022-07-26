@@ -17,12 +17,9 @@ def map_data(mapping_df, input_df, output_df):
             continue
         # get all the relevant
         requierd_data_rows = row["exel"].split(";")
-        print(requierd_data_rows)
-        #print(input_df[requierd_data_rows])
-        #print(input_df[row["exel"]])
+
         mapped = mapping_operation(row["operation"], input_df[requierd_data_rows])
         print("mapped: {}".format(mapped))
-        #print(row["leukoregister"])
         output_df[row["leukoregister"]]  = mapped
     return output_df
 
@@ -42,11 +39,7 @@ def mapping_operation(operation: str, data):
         data = data.values.tolist()
         return list(map(encoding_diagnose, data))
     elif operation == "date_to_year":
-        #TODO this has to be go mor state forrward
-        for i in data:
-            print(i)
-
-        return list(map(date_to_year, data))
+        return list(map(date_to_year, data.values))
     elif operation == "check":
         return list(map(check, data))
     elif operation == "encoding_gender":
@@ -98,8 +91,6 @@ def encoding_diagnose(data):
         return 20
     elif data == 3:
         return 20
-
-
     return data
 
 
@@ -109,10 +100,10 @@ def date_to_year(data):
     :param data:
     :return:
     """
-    assert isinstance(data, datetime.date)
     if pd.isnull(data):
         return None
-    return int(data.year)
+    re =pd.to_datetime(data).year
+    return pd.to_datetime(data).year.asi8[0]
 
 
 def check(data):
