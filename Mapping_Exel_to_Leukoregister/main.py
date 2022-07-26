@@ -11,19 +11,21 @@ def mapp_exel_to_leuko_register():
     """
     # get file name from args
     # curently as hardcoded variables drunig development
-    excel_file_path = "../data/Tabelle_MLD_Datenstruktur.xlsx"
+    excel_file_path = "data/Tabelle_MLD_Datenstruktur.xlsx"
     output_template_path = "mapping_csvs/output_template.csv"
+    output_path = "output/mapped.csv"
+
     output_df = pd.read_csv(output_template_path)
     print("Mapping data...")
 
-    mapping_demographics(excel_file_path,output_df)
+    output_df = mapping_demographics(excel_file_path,output_df)
     print("demographics mapped")
     #mapping_diagnostic_confirmation(excel_file_path,output_df)
 
     #TODO mapping for all the Forms
     #save the mapped data to a csv
-    output_file_path = "./data/mapped_data.csv"
-    output_df.to_csv(output_df, index=False)
+
+    output_df.to_csv(output_path, index=False)
 
 
 

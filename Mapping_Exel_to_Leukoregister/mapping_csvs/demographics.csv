@@ -10,7 +10,7 @@ verstorben?,decedent,copy
 Lebensdauer M.,death_age_years,month_to_year
 ,death_age_years_precision,
 Todesdatum,death_year,date_to_year
-Letzter Kontakt,last_contact_age,date_to_age
+Geburtsdatum;Letzter Kontakt,last_contact_age,date_to_age
 Letzter Kontakt,last_contact_year,date_to_year
 ,cause_of_death,
 ,cause_death_specify,

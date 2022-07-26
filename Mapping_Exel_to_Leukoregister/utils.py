@@ -1,7 +1,8 @@
 import pandas as pd
 import datetime
 
-def map_data(mapping_df, input_df,output_df):
+
+def map_data(mapping_df, input_df, output_df):
     """
     This takes the mapping_df and interates ofer them and  performs the operations, then save it to the output df
     :param mapping_df:
@@ -14,11 +15,15 @@ def map_data(mapping_df, input_df,output_df):
         # check if ther is nan in pandas datframe
         if pd.isnull(row["operation"]):
             continue
-
-        mapped = mapping_operation(row["operation"], input_df[row["exel"]])
-        print(mapped)
-        print(row)
-        #output_df[row["leukoregister"]] = mapping_operation(row["operation"], input_df[row["exel"]])
+        # get all the relevant
+        requierd_data_rows = row["exel"].split(";")
+        print(requierd_data_rows)
+        #print(input_df[requierd_data_rows])
+        #print(input_df[row["exel"]])
+        mapped = mapping_operation(row["operation"], input_df[requierd_data_rows])
+        print("mapped: {}".format(mapped))
+        #print(row["leukoregister"])
+        output_df[row["leukoregister"]]  = mapped
     return output_df
 
 
@@ -32,15 +37,39 @@ def mapping_operation(operation: str, data):
     if operation == "copy":
         return data
     elif operation == "month_to_year":
-        return map(month_to_year,data)
+        return list(map(month_to_year, data))
     elif operation == "encoding_diagnose":
-        return map(encoding_diagnose,data)
+        data = data.values.tolist()
+        return list(map(encoding_diagnose, data))
     elif operation == "date_to_year":
-        return map(date_to_year,data)
+        #TODO this has to be go mor state forrward
+        for i in data:
+            print(i)
+
+        return list(map(date_to_year, data))
     elif operation == "check":
-        return map(check,data)
+        return list(map(check, data))
+    elif operation == "encoding_gender":
+        return list(map(encoding_gender, data))
+    elif operation == "date_to_age":
+        return
     else:
-        return []
+        raise ValueError("Unknown operation: {}".format(operation))
+
+
+
+def encoding_gender(data):
+    """
+    This function converts from the exel gender codes to the leukregister codes
+    :return:
+    """
+    if pd.isnull(data):
+        return None
+    if data == "m":
+        return 2
+    elif data == "w":
+        return 1
+
 
 def month_to_year(data):
     """
@@ -48,8 +77,12 @@ def month_to_year(data):
     :param data:
     :return:
     """
-    assert isinstance(data, int)
+    if pd.isnull(data):
+        return None
+    assert isinstance(data, (int, float))
+
     return data // 12
+
 
 def encoding_diagnose(data):
     """
@@ -57,9 +90,18 @@ def encoding_diagnose(data):
     :param data:
     :return:
     """
-    #tODO: implement this
+    if pd.isnull(data):
+        return None
+    if data == 1:
+        return 20
+    elif data == 2:
+        return 20
+    elif data == 3:
+        return 20
+
 
     return data
+
 
 def date_to_year(data):
     """
@@ -68,16 +110,18 @@ def date_to_year(data):
     :return:
     """
     assert isinstance(data, datetime.date)
+    if pd.isnull(data):
+        return None
     return int(data.year)
+
 
 def check(data):
     """
-    This function checks if the data is valid.
+    This function checks if the data is a number or nan
     :param data:
     :return:
     """
-    assert isinstance(data, str)
-    if data is not None:
-        return 1
-    else:
-        return 0
+    if pd.isnull(data):
+        return None
+    assert isinstance(data, (int, float))
+    return 1
