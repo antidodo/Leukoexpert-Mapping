@@ -1,6 +1,5 @@
 import pandas as pd
-import datetime
-
+import numpy as np
 
 def map_data(mapping_df, input_df, output_df):
     """
@@ -17,10 +16,9 @@ def map_data(mapping_df, input_df, output_df):
             continue
         # get all the relevant
         requierd_data_rows = row["exel"].split(";")
-
         mapped = mapping_operation(row["operation"], input_df[requierd_data_rows])
         print("mapped: {}".format(mapped))
-        output_df[row["leukoregister"]]  = mapped
+        output_df[row["leukoregister"]] = mapped
     return output_df
 
 
@@ -31,25 +29,51 @@ def mapping_operation(operation: str, data):
     :param data:
     :return:
     """
-    if operation == "copy":
-        return data
+    if operation == "copy_int":
+        return pd.DataFrame(list(map(copy_int, data.values))).astype('Int64')
+    if operation == "copy_str":
+        return pd.DataFrame(list(map(copy_str, data.values)))
     elif operation == "month_to_year":
-        return list(map(month_to_year, data))
+        return pd.DataFrame(list(map(month_to_year, data.values))).astype('Int64')
     elif operation == "encoding_diagnose":
-        data = data.values.tolist()
-        return list(map(encoding_diagnose, data))
+        return pd.DataFrame(list(map(encoding_diagnose, data.values))).astype('Int64')
     elif operation == "date_to_year":
-        return list(map(date_to_year, data.values))
+        return pd.DataFrame(list(map(date_to_year, data.values))).astype('Int64')
     elif operation == "check":
-        return list(map(check, data))
+        return pd.DataFrame(list(map(check, data.values))).astype('Int64')
     elif operation == "encoding_gender":
-        return list(map(encoding_gender, data))
+        return pd.DataFrame(list(map(encoding_gender, data.values))).astype('Int64')
     elif operation == "date_to_age":
-        return
+        return pd.DataFrame(list(map(date_to_age, data.values))).astype('Int64')
+    elif operation == "floor":
+        return pd.DataFrame(list(map(data_floor, data.values))).astype('Int64')
     else:
         raise ValueError("Unknown operation: {}".format(operation))
 
 
+def copy_int(data):
+    """
+    This function copies the data to the leukoregister.
+    :param data:
+    :return:
+    """
+    data = data[0]
+    if pd.isnull(data):
+        return None
+    assert isinstance(data, (int, float))
+    return int(data)
+
+def copy_str(data):
+    """
+    This function copies the data to the leukoregister.
+    :param data:
+    :return:
+    """
+    data = data[0]
+    if pd.isnull(data):
+        return None
+    assert isinstance(data, (str))
+    return data
 
 def encoding_gender(data):
     """
@@ -58,9 +82,9 @@ def encoding_gender(data):
     """
     if pd.isnull(data):
         return None
-    if data == "m":
+    if data[0] == "m":
         return 2
-    elif data == "w":
+    elif data[0] == "w":
         return 1
 
 
@@ -70,6 +94,7 @@ def month_to_year(data):
     :param data:
     :return:
     """
+    data = data[0]
     if pd.isnull(data):
         return None
     assert isinstance(data, (int, float))
@@ -83,6 +108,7 @@ def encoding_diagnose(data):
     :param data:
     :return:
     """
+    data = data[0]
     if pd.isnull(data):
         return None
     if data == 1:
@@ -102,9 +128,30 @@ def date_to_year(data):
     """
     if pd.isnull(data):
         return None
-    re =pd.to_datetime(data).year
-    return pd.to_datetime(data).year.asi8[0]
+    return pd.to_datetime(data).year.values[0]
 
+def date_to_age(data):
+    """
+    This function converts the 2 dates to age.
+    :param data:
+    :return:
+    """
+    if pd.isnull(data).any():
+        return None
+    # get the age in years
+    return ((pd.to_datetime(data[1]) - pd.to_datetime(data[0]))//365).days
+
+def data_floor(data):
+    """
+    This function floors the data.
+    :param data:
+    :return:
+    """
+    data = data[0]
+    if pd.isnull(data):
+        return None
+    assert isinstance(data, (int, float))
+    return int(data)
 
 def check(data):
     """
@@ -112,7 +159,8 @@ def check(data):
     :param data:
     :return:
     """
+    data = data[0]
     if pd.isnull(data):
-        return None
+        return 99
     assert isinstance(data, (int, float))
     return 1
