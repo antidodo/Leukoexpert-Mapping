@@ -44,7 +44,7 @@ def mapping_operation(operation: str, data):
     elif operation == "encoding_gender":
         return pd.DataFrame(list(map(encoding_gender, data.values))).astype('Int64')
     elif operation == "date_to_age":
-        return pd.DataFrame(list(map(date_to_age, data.values))).astype('Int64')
+        return pd.DataFrame(list(map(date_to_age, data.values)))
     elif operation == "floor":
         return pd.DataFrame(list(map(data_floor, data.values))).astype('Int64')
     else:
@@ -139,7 +139,8 @@ def date_to_age(data):
     if pd.isnull(data).any():
         return None
     # get the age in years
-    return ((pd.to_datetime(data[1]) - pd.to_datetime(data[0]))//365).days
+    res =round(((pd.to_datetime(data[1]) - pd.to_datetime(data[0]))).value/3.154e+16,2)
+    return res
 
 def data_floor(data):
     """
