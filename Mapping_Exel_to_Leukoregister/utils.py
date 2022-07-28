@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 
+
 def map_data(mapping_df, input_df, output_df):
     """
     This takes the mapping_df and interates ofer them and  performs the operations, then save it to the output df
@@ -63,6 +64,7 @@ def copy_int(data):
     assert isinstance(data, (int, float))
     return int(data)
 
+
 def copy_str(data):
     """
     This function copies the data to the leukoregister.
@@ -74,6 +76,7 @@ def copy_str(data):
         return None
     assert isinstance(data, (str))
     return data
+
 
 def encoding_gender(data):
     """
@@ -99,7 +102,7 @@ def month_to_year(data):
         return None
     assert isinstance(data, (int, float))
 
-    return data // 12
+    return round(data / 12, 2)
 
 
 def encoding_diagnose(data):
@@ -130,6 +133,7 @@ def date_to_year(data):
         return None
     return pd.to_datetime(data).year.values[0]
 
+
 def date_to_age(data):
     """
     This function converts the 2 dates to age.
@@ -139,8 +143,9 @@ def date_to_age(data):
     if pd.isnull(data).any():
         return None
     # get the age in years
-    res =round(((pd.to_datetime(data[1]) - pd.to_datetime(data[0]))).value/3.154e+16,2)
+    res = round(((pd.to_datetime(data[1]) - pd.to_datetime(data[0]))).value / 3.154e+16, 2)
     return res
+
 
 def data_floor(data):
     """
@@ -153,6 +158,7 @@ def data_floor(data):
         return None
     assert isinstance(data, (int, float))
     return int(data)
+
 
 def check(data):
     """
