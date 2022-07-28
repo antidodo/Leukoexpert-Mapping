@@ -114,7 +114,7 @@ def encoding_diagnose(data):
     if data == 1:
         return 20
     elif data == 2:
-        return 20
+        return 9
     elif data == 3:
         return 20
     return data
