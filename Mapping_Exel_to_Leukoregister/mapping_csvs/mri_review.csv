@@ -1,149 +1,118 @@
 leukoregister,exel,operation
-mri_instructions
-mri_1_age_years
-mri_1_age_years_precision
-mri_1_year_alert
-mri_1_death_alert
-mri_1_year
-mri_1_dicom
+mri_1_age_years,Überblick/Geburtsdatum;MRT/MRT 1 Datum,date_to_age
+mri_1_age_years_precision,Überblick/Geburtsdatum;MRT/MRT 1 Datum,precision
+mri_1_year,MRT/MRT 1 Datum,date_to_year
+mri_1_dicom,MRT/Bilder?,copy
 mri_1_study_modality
 mri_1_index
-mri_1_index_alert
 mri_1_index_comments
 mrs_1
 mri_1_total_score
 mri_1_total_score_3
 mri_1_total_score_2
 mri_1_additional
-mri_2_age_years
-mri_2_age_years_precision
-mri_2_year_alert
-mri_2_death_alert
-mri_2_year
-mri_2_dicom
+mri_2_age_years,Überblick/Geburtsdatum;MRT/MRT 2 Datum,date_to_age
+mri_2_age_years_precision,Überblick/Geburtsdatum;MRT/MRT 2 Datum,precision
+mri_2_year,MRT/MRT 2 Datum,date_to_year
+mri_2_dicom,MRT/Bilder?,copy
 mri_1_study_modality_2
 mri_2_index
-mri_2_index_alert
 mri_2_index_comments
 mrs_2
 mri_2_total_score
 mri_2_total_score_3
 mri_2_total_score_2
 mri_2_additional
-mri_3_age_years
-mri_3_age_years_precision
-mri_3_year_alert
-mri_3_death_alert
-mri_3_year
-mri_3_dicom
+mri_3_age_years,Überblick/Geburtsdatum;MRT/MRT 3 Datum,date_to_age
+mri_3_age_years_precision,Überblick/Geburtsdatum;MRT/MRT 3 Datum,precision
+mri_3_year,MRT/MRT 3 Datum,date_to_year
+mri_3_dicom,MRT/Bilder?,copy
 mri_1_study_modality_3
 mri_3_index
-mri_3_index_alert
 mri_3_index_comments
 mrs_3
 mri_3_total_score
 mri_3_total_score_3
 mri_3_total_score_2
 mri_3_additional
-mri_4_age_years
-mri_4_age_years_precision
-mri_4_year_alert
-mri_4_death_alert
-mri_4_year
-mri_4_dicom
+mri_4_age_years,Überblick/Geburtsdatum;MRT/MRT 4 Datum,date_to_age
+mri_4_age_years_precision,Überblick/Geburtsdatum;MRT/MRT 4 Datum,precision
+mri_4_year,MRT/MRT 4 Datum,date_to_year
+mri_4_dicom,MRT/Bilder?,copy
 mri_1_study_modality_4
 mri_4_index
-mri_4_index_alert
 mri_4_index_comments
 mrs_4
 mri_4_total_score
 mri_4_total_score_3
 mri_4_total_score_2
 mri_4_additional
-mri_5_age_years
-mri_5_age_years_precision
-mri_5_year_alert
-mri_5_death_alert
-mri_5_year
-mri_5_dicom
+mri_5_age_years,Überblick/Geburtsdatum;MRT/MRT 5 Datum,date_to_age
+mri_5_age_years_precision,Überblick/Geburtsdatum;MRT/MRT 5 Datum,precision
+mri_5_year,MRT/MRT 5 Datum,date_to_year
+mri_5_dicom,MRT/Bilder?,copy
 mri_1_study_modality_5
 mri_5_index
-mri_5_index_alert
 mri_5_index_comments
 mrs_5
 mri_5_total_score
 mri_5_total_score_3
 mri_5_total_score_2
 mri_5_additional
-mri_6_age_years
-mri_6_age_years_precision
-mri_6_year_alert
-mri_6_death_alert
-mri_6_year
-mri_6_dicom
+mri_6_age_years,Überblick/Geburtsdatum;MRT/MRT 6 Datum,date_to_age
+mri_6_age_years_precision,Überblick/Geburtsdatum;MRT/MRT 6 Datum,precision
+mri_6_year,MRT/MRT 6 Datum,date_to_year
+mri_6_dicom,MRT/Bilder?,copy
 mri_1_study_modality_6
 mri_6_index
-mri_6_index_alert
 mri_6_index_comments
 mri_6_reviewer_other_mld
 mri_6_total_score
 mri_6_total_score_3
 mri_6_total_score_2
 mri_6_additional
-mri_7_age_years
-mri_7_age_years_precision
-mri_7_year_alert
-mri_7_death_alert
-mri_7_year
-mri_7_dicom
+mri_7_age_years,Überblick/Geburtsdatum;MRT/MRT 7 Datum,date_to_age
+mri_7_age_years_precision,Überblick/Geburtsdatum;MRT/MRT 7 Datum,precision
+mri_7_year,MRT/MRT 7 Datum,date_to_year
+mri_7_dicom,MRT/Bilder?,copy
 mri_1_study_modality_7
 mri_7_index
-mri_7_index_alert
 mri_7_index_comments
 mrs_7
 mri_7_total_score
 mri_7_total_score_3
 mri_7_total_score_2
 mri_7_additional
-mri_8_age_years
-mri_8_age_years_precision
-mri_8_year_alert
-mri_8_death_alert
-mri_8_year
-mri_8_dicom
+mri_8_age_years,Überblick/Geburtsdatum;MRT/MRT 8 Datum,date_to_age
+mri_8_age_years_precision,Überblick/Geburtsdatum;MRT/MRT 8 Datum,precision
+mri_8_year,MRT/MRT 8 Datum,date_to_year
+mri_8_dicom,MRT/Bilder?,copy
 mri_1_study_modality_8
 mri_8_index
-mri_8_index_alert
 mri_8_index_comments
 mrs_8
 mri_8_total_score
 mri_8_total_score_3
 mri_8_total_score_2
 mri_8_additional
-mri_9_age_years
-mri_9_age_years_precision
-mri_9_year_alert
-mri_9_death_alert
-mri_9_year
-mri_9_dicom
+mri_9_age_years,Überblick/Geburtsdatum;MRT/MRT 9 Datum,date_to_age
+mri_9_age_years_precision,Überblick/Geburtsdatum;MRT/MRT 9 Datum,precision
+mri_9_year,MRT/MRT 9 Datum,date_to_year
+mri_9_dicom,MRT/Bilder?,copy
 mri_1_study_modality_9
 mri_9_index
-mri_9_index_alert
 mri_9_index_comments
 mrs_9
 mri_9_total_score
 mri_9_total_score_3
 mri_9_total_score_2
 mri_9_additional
-mri_10_age_years
-mri_10_age_years_precision
-mri_10_year_alert
-mri_10_death_alert
-mri_10_year
-mri_10_dicom
+mri_10_age_years,Überblick/Geburtsdatum;MRT/MRT 10 Datum,date_to_age
+mri_10_age_years_precision,Überblick/Geburtsdatum;MRT/MRT 10 Datum,precision
+mri_10_year,MRT/MRT 10 Datum,date_to_year
+mri_10_dicom,MRT/Bilder?,copy
 mri_1_study_modality_10
 mri_10_index
-mri_10_index_alert
 mri_10_index_comments
 mrs_10
 mri_10_total_score

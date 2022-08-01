@@ -183,3 +183,12 @@ def check(data):
         return 99
     assert isinstance(data, (int, float))
     return 1
+
+def add_df_name_to_column_names(df, name):
+    """
+    This function adds a name to all of the columns.
+    :param df:
+    :return:
+    """
+    df = df.rename(columns=lambda x: name + "/" + x)
+    return df
