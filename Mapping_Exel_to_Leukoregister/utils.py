@@ -17,7 +17,9 @@ def map_data(mapping_df, input_df, output_df):
             continue
         # get all the relevant
         requierd_data_rows = row["exel"].split(";")
+        print(requierd_data_rows)
         mapped = mapping_operation(row["operation"], input_df[requierd_data_rows])
+        print(requierd_data_rows)
         print("mapped: {}".format(mapped))
         output_df[row["leukoregister"]] = mapped
     return output_df
@@ -50,8 +52,24 @@ def mapping_operation(operation: str, data):
         return pd.DataFrame(list(map(data_floor, data.values))).astype('Int64')
     elif operation == "monts_to_date_year":
         return pd.DataFrame(list(map(monts_to_date_year, data.values))).astype('Int64')
+    elif operation == "precision":
+        return pd.DataFrame(list(map(precision, data.values))).astype('Int64')
     else:
         raise ValueError("Unknown operation: {}".format(operation))
+
+
+def precision(data):
+    """
+    This function returns a 1 when the age was calculated and 2 when one of the dates was nan.
+    :param data:
+    :return:
+    """
+    if pd.isnull(data).any():
+        return None
+    if data.size==2 and data.dtype=='datetime64[ns]':
+        return 1
+    else:
+        return 2
 
 
 def copy_int(data):
@@ -63,7 +81,7 @@ def copy_int(data):
     data = data[0]
     if pd.isnull(data):
         return None
-    assert isinstance(data, (int, float))
+    assert isinstance(data, (int, float, np.int64))
     return int(data)
 
 
