@@ -2,8 +2,6 @@ leukoregister,exel,operation
 symptoms_first_noted_instructions
 age_symptom_onset
 age_symptom_onset_precision
-symptom_onset_year_alert
-symptom_onset_death_alert
 symptom_onset_year
 rise_other
 first_symptoms_ags

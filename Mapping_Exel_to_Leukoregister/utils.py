@@ -17,9 +17,8 @@ def map_data(mapping_df, input_df, output_df):
             continue
         # get all the relevant
         requierd_data_rows = row["exel"].split(";")
-        print(requierd_data_rows)
+
         mapped = mapping_operation(row["operation"], input_df[requierd_data_rows])
-        print(requierd_data_rows)
         print("mapped: {}".format(mapped))
         output_df[row["leukoregister"]] = mapped
     return output_df

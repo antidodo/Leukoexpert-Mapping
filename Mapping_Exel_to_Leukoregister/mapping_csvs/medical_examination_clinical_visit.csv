@@ -1,12 +1,9 @@
 leukoregister,exel,operation
-encounter_medrec_instructions
 encounter_type
 encounter_type_original
 encounter_age_years
 encounter_type_imputed
 encounter_age_years_precision
-encounter_year_alert
-encounter_death_alert
 encounter_year
 changes
 encounter_height
@@ -72,8 +69,6 @@ gait_type
 encounter_gmfm88
 encounter_gmfm88_age_years
 encounter_gmfm88_age_years_precision
-encounter_gmfm88_year_alert
-encounter_gmfm88_death_alert
 encounter_gmfm88_year
 encounter_gmfm88_dimension_a
 encounter_gmfm88_dimension_a_goal
@@ -177,7 +172,6 @@ encounter_urinary_function
 encounter_urinary_function_comments
 encounter_enuresis_age_years
 encounter_enuresis_age_precision
-encounter_enuresis_age_ya
 encounter_enuresis_age_da
 encounter_enuresis_age_year
 encounter_neurogenic_bladder
@@ -198,8 +192,6 @@ sexdysfunc_erect
 sexdysfunc_libido
 bowelincon
 furtherorgans
-encounter_additional_instructions
-scores_instructions
 ags_scale_guide
 ags_scale_review_date
 ags_scale_normocephaly
