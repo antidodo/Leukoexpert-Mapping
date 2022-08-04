@@ -15,8 +15,6 @@ tte_cvi_year
 tte_cvi_comments
 tte_nystagmus_age
 tte_nystagmus_age_precision
-tte_nystagmus_age_ya
-tte_nystagmus_age_da
 tte_nystagmus_age_year
 tte_nystagmus_resolution
 tte_nystagmus_comments
@@ -49,8 +47,6 @@ tte_asp_pneumonia_year
 tte_asp_pneumonia_comments
 tte_lung_antibiotics_age
 tte_lung_antibiotics_age_precision
-tte_lung_antibiotics_age_ya
-tte_lung_antibiotics_age_da
 tte_lung_antibiotics_age_year
 tte_lung_antibiotics_comments
 tte_ventilation_age_years
@@ -68,8 +64,6 @@ tte_ventilation_category_subs
 tte_ventilation_comments_subs
 tte_tracheostomy_age
 tte_tracheostomy_age_precision
-tte_tracheostomy_age_ya
-tte_tracheostomy_age_da
 tte_tracheostomy_age_year
 tte_tracheostomy_comments
 tte_stridor_age_years
@@ -84,8 +78,6 @@ tte_osa_diagnosis
 tte_osa_comments
 tte_cardiovascular_issues_age_years
 tte_cardiovascular_issues_age_precision
-tte_cardiovascular_issues_age_ya
-tte_cardiovascular_issues_age_da
 tte_cardiovascular_issues_age_year
 tte_cardiovascular_issues_comments
 tte_pulm_hypertension_age_years
@@ -100,10 +92,10 @@ tte_hypertension_mgmt
 tte_hypertension_comments
 tte_failure_to_thrive
 tte_gerd
-tte_dysphagia
+tte_dysphagia,Verlauf/Status Schlu.,copy_int
 tte_iugr
 tte_recurrent_vomiting
-tte_feeding_tube
+tte_feeding_tube,Verlauf/Status PEG/MS,copy_int
 tte_gastric_feeds
 tte_ibd
 tte_liver_abn
@@ -112,33 +104,27 @@ tte_gi_abn
 tte_gi_detail
 tte_gerd_age_years
 tte_gerd_age_precision
-tte_gerd_age_ya
-tte_gerd_age_da
 tte_gerd_age_year
 tte_gerd_comments
 tte_failure_to_thrive_age_years
 tte_failure_to_thrive_age_precision
-tte_failure_to_thrive_age_da
-tte_failure_to_thrive_age_ya
 tte_failure_to_thrive_age_year
 tte_failure_to_thrive_comments
 tte_iugr_age_years
 tte_iugr_age_years_precision
 tte_iugr_year
 tte_iugr_comments
-tte_dysphagia_age_years
-tte_dysphagia_age_years_precision
-tte_dysphagia_year
+tte_dysphagia_age_years,Verlauf/Schluckbeschwerden,month_to_year
+tte_dysphagia_age_years_precision,Überblick/Geburtsdatum;Verlauf/Schluckbeschwerden,precision_data_and_months
+tte_dysphagia_year,Überblick/Geburtsdatum;Verlauf/Schluckbeschwerden,months_to_date_year
 tte_dysphagia_comments
 tte_recurrent_vomiting_age_years
 tte_recurrent_vomiting_age_precision
-tte_recurrent_vomiting_age_ya
-tte_recurrent_vomiting_age_da
 tte_recurrent_vomiting_age_year
 tte_recurrent_vomiting_comments
-tte_feeding_tube_age_years
-tte_feeding_tube_age_years_precision
-tte_feeding_tube_year
+tte_feeding_tube_age_years,Verlauf/PEG/Magensonde,month_to_year
+tte_feeding_tube_age_years_precision,Überblick/Geburtsdatum;Verlauf/PEG/Magensonde,precision_data_and_months
+tte_feeding_tube_year,Überblick/Geburtsdatum;Verlauf/PEG/Magensonde,months_to_date_year
 tte_feeding_tube_comments
 tte_gastric_feeds_age_years
 tte_gastric_feeds_age_years_precision
@@ -174,8 +160,6 @@ tte_incontinence_year
 tte_incontinence_comments
 tte_neurogenic_bladder_age
 tte_neurogenic_bladder_age_precision
-tte_neurogenic_bladder_age_ya
-tte_neurogenic_bladder_age_da
 tte_neurogenic_bladder_age_year
 tte_neurogenic_bladder_comments
 tte_renal_abn_age_years
@@ -184,14 +168,10 @@ tte_renal_abn_year
 tte_renal_abn_comments
 tte_uti_age
 tte_uti_age_precision
-tte_uti_age_ya
-tte_uti_age_da
 tte_uti_age_year
 tte_uti_comments
 tte_kidney_bladder_antibiotics_age
 tte_kidney_bladder_antibiotics_age_precision
-tte_kidney_bladder_antibiotics_age_ya
-tte_kidney_bladder_antibiotics_age_da
 tte_kidney_bladder_antibiotics_age_year
 tte_kidney_bladder_antibiotics_comments
 tte_anemia
@@ -232,8 +212,6 @@ tte_autoantibodies_src_type
 tte_autoantibodies_comments
 tte_hematological_issues_age_years
 tte_hematological_issues_age_precision
-tte_hematological_issues_age_ya
-tte_hematological_issues_age_da
 tte_hematological_issues_age_year
 tte_hematological_issues_comments
 tte_ghd
@@ -258,7 +236,7 @@ tte_diabetes_insipidus_age_years
 tte_diabetes_insipidus_age_years_precision
 tte_diabetes_insipidus_year
 tte_diabetes_insipidus_comments
-tte_mmm
+tte_mmm,Verlauf/Status Muskelschwäche,copy_int
 tte_arthropathy
 tte_joint_flexibility
 tte_scoliosis
@@ -268,11 +246,11 @@ tte_hip_dislocation
 tte_hip_surgery
 tte_scoliosis_surgery
 tte_musculoskeletal_detail
-tte_mmm_age_years
-tte_mmm_age_years_precision
-tte_mmm_year
+tte_mmm_age_years,Verlauf/Muskelschwäche,month_to_year
+tte_mmm_age_years_precision,Überblick/Geburtsdatum;Verlauf/Muskelschwäche,precision_data_and_months
+tte_mmm_year,Überblick/Geburtsdatum;Verlauf/Muskelschwäche,months_to_date_year
 tte_mmm_diagnosis
-tte_mmm_comments
+tte_mmm_comments,"",""
 tte_arthropathy_age_years
 tte_arthropathy_age_years_precision
 tte_arthropathy_year
@@ -280,8 +258,6 @@ tte_arthropathy_diagnosis
 tte_arthropathy_comments
 tte_joint_flexibility_age_years
 tte_joint_flexibility_age_precision
-tte_joint_flexibility_age_ya
-tte_joint_flexibility_age_da
 tte_joint_flexibility_age_year
 tte_joint_flexibility_comments
 tte_scoliosis_age_years
@@ -290,8 +266,6 @@ tte_scoliosis_comments
 tte_scoliosis_year
 tte_fracture_age
 tte_fracture_age_precision
-tte_fracture_age_ya
-tte_fracture_age_da
 tte_fracture_age_year
 tte_fracture_comments
 tte_bone_health_age_years
@@ -325,8 +299,8 @@ tte_skin_abn_frequency
 tte_skin_abn_comments
 tte_hc_abn
 tte_axial_hypotonia
-tte_spasticity_lower
-tte_ataxia,Verlauf/Ataxie,copy_int
+tte_spasticity_lower,Verlauf/Status Spastik,copy_int
+tte_ataxia,Verlauf/Status Ataxie,copy_int
 tte_dystonia
 tte_cranial_neuropathy
 tte_peripheral_neuropathy
@@ -335,7 +309,7 @@ tte_iso_cog_delay
 tte_iso_gm_delay
 tte_developmental_delay
 tte_loa_ass
-tte_comm_loss
+tte_comm_loss,Verlauf/Status Kom.,copy_int
 tte_loa
 tte_neurologic_detail
 tte_hc_abn_age_years
@@ -347,17 +321,15 @@ tte_axial_hypotonia_age_years
 tte_axial_hypotonia_age_years_precision
 tte_axial_hypotonia_year
 tte_axial_hypotonia_comments
-tte_spasticity_lower_age_years
-tte_spasticity_lower_age_precision
-tte_spasticity_lower_age_ya
-tte_spasticity_lower_age_da
-tte_spasticity_lower_age_year
+tte_spasticity_lower_age_years,Verlauf/Spastik,month_to_year
+tte_spasticity_lower_age_precision,Überblick/Geburtsdatum;Verlauf/Spastik,precision_data_and_months
+tte_spasticity_lower_age_year,Überblick/Geburtsdatum;Verlauf/Spastik,months_to_date_year
 tte_spasticity_lower_onset
 tte_spasticity_lower_comments
 tte_ataxia_age_years,Verlauf/Ataxie,month_to_year
-tte_ataxia_age_years_precision
+tte_ataxia_age_years_precision,Überblick/Geburtsdatum;Verlauf/Ataxie,precision_data_and_months
 tte_ataxia_comments
-tte_ataxia_year
+tte_ataxia_year,Überblick/Geburtsdatum;Verlauf/Ataxie,months_to_date_year
 tte_dystonia_age_years
 tte_dystonia_age_years_precision
 tte_dystonia_year
@@ -389,17 +361,15 @@ tte_iso_gm_delay_year
 tte_iso_gm_delay_comments
 tte_developmental_delay_age_years
 tte_developmental_delay_age_precision
-tte_developmental_delay_age_ya
-tte_developmental_delay_age_da
 tte_developmental_delay_age_year
 tte_developmental_delay_comments
 tte_loa_ass_age_years
 tte_loa_ass_age_years_precision
 tte_loa_ass_year
 tte_loa_ass_comments
-tte_comm_loss_age_years
-tte_comm_loss_age_years_precision
-tte_comm_loss_year
+tte_comm_loss_age_years,Verlauf/Verl. Komm.,month_to_year
+tte_comm_loss_age_years_precision,Überblick/Geburtsdatum;Verlauf/Verl. Komm.,precision_data_and_months
+tte_comm_loss_year,Überblick/Geburtsdatum;Verlauf/Verl. Komm.,months_to_date_year
 tte_comm_loss_type
 tte_comm_loss_verbal_frequency
 tte_comm_loss_vocab_frequency
@@ -454,41 +424,31 @@ tte_sdr
 tte_tone_detail
 tte_baclofen_oral_age
 tte_baclofen_oral_age_precision
-tte_baclofen_oral_age_ya
-tte_baclofen_oral_age_da
 tte_baclofen_oral_age_year
 tte_baclofen_oral_comments
 tte_botox_injections_age
 tte_botox_injections_age_precision
-tte_botox_injections_age_da
-tte_botox_injections_age_ya
 tte_botox_injections_age_year
 tte_botox_injections_comments
 tte_bp_age
 tte_bp_age_precision
-tte_bp_age_ya
-tte_bp_age_da
 tte_bp_age_year
 tte_bp_comments
 tte_dbs_age
 tte_dbs_age_precision
-tte_dbs_age_ya
-tte_dbs_age_da
 tte_dbs_comments
 tte_dbs_age_year
 tte_sdr_age
 tte_sdr_age_precision
-tte_sdr_age_ya
-tte_sdr_age_da
 tte_sdr_comments
 tte_sdr_age_year
 tte_anti_epileptic
-tte_seizures
+tte_seizures,Verlauf/Status Epi.,copy_int
 tte_seizures_anticonvulsants
 tte_seizure_detail
-tte_seizures_age_years
-tte_seizures_age_years_precision
-tte_seizures_year
+tte_seizures_age_years,Verlauf/1. Epilepsie,month_to_year
+tte_seizures_age_years_precision,Überblick/Geburtsdatum;Verlauf/1. Epilepsie,precision_data_and_months
+tte_seizures_year,Überblick/Geburtsdatum;Verlauf/1. Epilepsie,months_to_date_year
 tte_seizures_eeg
 tte_seizures_comments
 tte_anti_epileptic_age_years
@@ -519,9 +479,7 @@ tte_sterile_pyrexia_year
 tte_sterile_pyrexia_frequency
 tte_sterile_pyrexia_comments
 tte_autonomic_issues_age_precision
-tte_autonomic_issues_age_ya
 tte_autonomic_issues_age_years
-tte_autonomic_issues_age_da
 tte_autonomic_issues_age_year
 tte_autonomic_issues_comments
 tte_blood_lipid_abn_age_years

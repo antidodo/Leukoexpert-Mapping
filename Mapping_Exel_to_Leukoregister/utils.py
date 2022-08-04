@@ -35,7 +35,7 @@ def mapping_operation(operation: str, data):
         return pd.DataFrame(list(map(copy_int, data.values))).astype('Int64')
     if operation == "copy_str":
         return pd.DataFrame(list(map(copy_str, data.values)))
-    elif operation == "month_to_year":
+    elif operation == "months_to_year":
         return pd.DataFrame(list(map(month_to_year, data.values))).astype('Int64')
     elif operation == "encoding_diagnose":
         return pd.DataFrame(list(map(encoding_diagnose, data.values))).astype('Int64')
@@ -49,8 +49,8 @@ def mapping_operation(operation: str, data):
         return pd.DataFrame(list(map(date_to_age, data.values)))
     elif operation == "floor":
         return pd.DataFrame(list(map(data_floor, data.values))).astype('Int64')
-    elif operation == "monts_to_date_year":
-        return pd.DataFrame(list(map(monts_to_date_year, data.values))).astype('Int64')
+    elif operation == "months_to_date_year":
+        return pd.DataFrame(list(map(months_to_date_year, data.values))).astype('Int64')
     elif operation == "precision":
         return pd.DataFrame(list(map(precision, data.values))).astype('Int64')
     else:
@@ -152,9 +152,9 @@ def date_to_year(data):
         return None
     return pd.to_datetime(data).year.values[0]
 
-def monts_to_date_year(data):
+def months_to_date_year(data):
     """
-    This function gets the one date and monts and returns the date year.
+    This function gets the one date and months and returns the date year.
     :param data:
     :return:
     """
