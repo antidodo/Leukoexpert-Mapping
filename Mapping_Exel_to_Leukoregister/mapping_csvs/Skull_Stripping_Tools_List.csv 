@@ -1,0 +1,6 @@
+Tool_name,works_on_dicom,works_on_nifti,license,paper,github,model_included,separate_tool,integreatetd_in_python
+BrainMaGe,dicom have to be convertet,yes,BSD-3-Clause,https://www.sciencedirect.com/science/article/pii/S105381192030567X?via%3Dihub,https://github.com/CBICA/BrainMaGe/blob/master/LICENSE,yes,no,yes
+BET,Integratetd in fsl, nifti
+HDBET, nifti
+Slizer 3d
+Itcase net
