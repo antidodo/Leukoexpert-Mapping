@@ -1,6 +1,7 @@
 import pandas as pd
 from map_demographics import mapping_demographics
 from map_mri_review import mapping_mri_review
+from map_first_symptoms import mapping_first_symptoms
 from map_diagnostic_confirmation import mapping_diagnostic_confirmation
 
 
@@ -23,7 +24,8 @@ def mapp_exel_to_leuko_register():
     print("demographics mapped")
     #mapping_diagnostic_confirmation(excel_file_path,output_df)
     mapping_mri_review(excel_file_path,output_df)
-
+    print("mri review mapped")
+    mapping_first_symptoms(excel_file_path,output_df)
 
     #TODO mapping for all the Forms
     #save the mapped data to a csv

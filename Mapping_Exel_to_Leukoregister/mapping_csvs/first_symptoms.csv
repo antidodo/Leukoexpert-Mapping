@@ -1,12 +1,11 @@
 leukoregister,exel,operation
-symptoms_first_noted_instructions
-age_symptom_onset
-age_symptom_onset_precision
-symptom_onset_year
-rise_other
+age_symptom_onset,Überblick/Onset M.,month_to_year
+age_symptom_onset_precision,Überblick/Onset M.,precision_data_and_months
+symptom_onset_year,berblick/Geburtsdatum;Überblick/Onset M.,months_to_date_year
+rise_other,Notiz zum Erkrankungsbeginn Saskia (größtenteils Informationen aus Arztbriefen),copy_str
 first_symptoms_ags_moto_comments
 first_symptoms_ags_tone
-first_symptoms_ags_tone_comments
+first_symptoms_ags_tone_comments,""
 first_symptoms_ags_lang_comments
 first_symptoms_ags_ment_comments
 first_symptoms_ags_feed_comments
