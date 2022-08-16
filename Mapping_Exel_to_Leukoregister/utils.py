@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+from numpy import int64
 
 
 def map_data(mapping_df, input_df, output_df):
@@ -36,7 +37,7 @@ def mapping_operation(operation: str, data):
     if operation == "copy_str":
         return pd.DataFrame(list(map(copy_str, data.values)))
     elif operation == "months_to_year":
-        return pd.DataFrame(list(map(month_to_year, data.values))).astype('Int64')
+        return pd.DataFrame(list(map(month_to_year, data.values)))
     elif operation == "encoding_diagnose":
         return pd.DataFrame(list(map(encoding_diagnose, data.values))).astype('Int64')
     elif operation == "date_to_year":
@@ -50,11 +51,27 @@ def mapping_operation(operation: str, data):
     elif operation == "floor":
         return pd.DataFrame(list(map(data_floor, data.values))).astype('Int64')
     elif operation == "months_to_date_year":
-        return pd.DataFrame(list(map(months_to_date_year, data.values))).astype('Int64')
+        return pd.DataFrame(list(map(months_to_date_year, data.values)))
     elif operation == "precision":
         return pd.DataFrame(list(map(precision, data.values))).astype('Int64')
+    elif operation == "precision_months":
+        return pd.DataFrame(list(map(precision_months, data.values))).astype('Int64')
     else:
         raise ValueError("Unknown operation: {}".format(operation))
+
+
+def precision_months(data):
+    """
+    This function returns the precision of the months.
+    :param data:
+    :return:
+    """
+    if pd.isnull(data):
+        return None
+    if isinstance(data, (int, float, np.int64)) and 0 <= data <= 1440:
+        return 1
+    else:
+        return 2
 
 
 def precision(data):
@@ -119,7 +136,8 @@ def month_to_year(data):
     data = data[0]
     if pd.isnull(data):
         return None
-    assert isinstance(data, (int, float))
+    print(data.dtype)
+    assert isinstance(data, (int64,int, float))
 
     return round(data / 12, 2)
 
@@ -159,8 +177,9 @@ def months_to_date_year(data):
     :return:
     """
     #TODO
-    if pd.isnull(data):
+    if pd.isnull(data).any():
         return None
+
     return "TODO"
 
 def date_to_age(data):

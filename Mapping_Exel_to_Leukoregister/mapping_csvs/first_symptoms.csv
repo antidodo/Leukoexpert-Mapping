@@ -1,8 +1,8 @@
 leukoregister,exel,operation
-age_symptom_onset,Überblick/Onset M.,month_to_year
-age_symptom_onset_precision,Überblick/Onset M.,precision_data_and_months
-symptom_onset_year,berblick/Geburtsdatum;Überblick/Onset M.,months_to_date_year
-rise_other,Notiz zum Erkrankungsbeginn Saskia (größtenteils Informationen aus Arztbriefen),copy_str
+age_symptom_onset,Überblick/Onset M.,months_to_year
+age_symptom_onset_precision,Überblick/Onset M.,precision_months
+symptom_onset_year,Überblick/Geburtsdatum;Überblick/Onset M.,months_to_date_year
+rise_other,"",""
 first_symptoms_ags_moto_comments
 first_symptoms_ags_tone
 first_symptoms_ags_tone_comments,""
@@ -19,17 +19,17 @@ first_symptoms___1,Onset/Auffälliges Gehen,copy_int
 first_symptoms___2,Onset/Feinmotorik,copy_int
 first_symptoms___3,Onset/Muskuläre Schwäche,copy_int
 first_symptoms___4,Onset/Spastik/Spitzfuß,copy_int
-first_symptoms___5,Onset/Koordination Schwäche,copy_int
+first_symptoms___5,Onset/Koordination,copy_int
 first_symptoms___6,Onset/Kognition,copy_int
 first_symptoms___7,Onset/Auffällige Sprache,copy_int
 first_symptoms___8,Onset/Verhaltensauffälligkeiten,copy_int
 first_symptoms___9
 first_symptoms___10
-first_symptoms___11,Onset/Entwicklungsrückschritte,copy_int
+first_symptoms___11,"",""
 first_symptoms___12,Onset/Epilepsie,copy_int
 first_symptoms___13,Onset/Augenbewegungsstörung,copy_int
 first_symptoms___14
 first_symptoms___15
 first_symptoms___98
 first_symptoms___99
-first_symptoms_comments,Notiz zum Erkrankungsbeginn Saskia (größtenteils Informationen aus Arztbriefen),copy_str
+first_symptoms_comments,Onset/Notiz zum Erkrankungsbeginn Saskia (größtenteils Informationen aus Arztbriefen),copy_str
