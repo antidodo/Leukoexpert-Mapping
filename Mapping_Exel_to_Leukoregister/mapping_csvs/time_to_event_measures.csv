@@ -114,7 +114,7 @@ tte_iugr_age_years
 tte_iugr_age_years_precision
 tte_iugr_year
 tte_iugr_comments
-tte_dysphagia_age_years,Verlauf/Schluckbeschwerden,month_to_year
+tte_dysphagia_age_years,Verlauf/Schluckbeschwerden,months_to_year
 tte_dysphagia_age_years_precision,Überblick/Geburtsdatum;Verlauf/Schluckbeschwerden,precision_data_and_months
 tte_dysphagia_year,Überblick/Geburtsdatum;Verlauf/Schluckbeschwerden,months_to_date_year
 tte_dysphagia_comments
@@ -122,7 +122,7 @@ tte_recurrent_vomiting_age_years
 tte_recurrent_vomiting_age_precision
 tte_recurrent_vomiting_age_year
 tte_recurrent_vomiting_comments
-tte_feeding_tube_age_years,Verlauf/PEG/Magensonde,month_to_year
+tte_feeding_tube_age_years,Verlauf/PEG/Magensonde,months_to_year
 tte_feeding_tube_age_years_precision,Überblick/Geburtsdatum;Verlauf/PEG/Magensonde,precision_data_and_months
 tte_feeding_tube_year,Überblick/Geburtsdatum;Verlauf/PEG/Magensonde,months_to_date_year
 tte_feeding_tube_comments
@@ -246,7 +246,7 @@ tte_hip_dislocation
 tte_hip_surgery
 tte_scoliosis_surgery
 tte_musculoskeletal_detail
-tte_mmm_age_years,Verlauf/Muskelschwäche,month_to_year
+tte_mmm_age_years,Verlauf/Muskelschwäche,months_to_year
 tte_mmm_age_years_precision,Überblick/Geburtsdatum;Verlauf/Muskelschwäche,precision_data_and_months
 tte_mmm_year,Überblick/Geburtsdatum;Verlauf/Muskelschwäche,months_to_date_year
 tte_mmm_diagnosis
@@ -321,12 +321,12 @@ tte_axial_hypotonia_age_years
 tte_axial_hypotonia_age_years_precision
 tte_axial_hypotonia_year
 tte_axial_hypotonia_comments
-tte_spasticity_lower_age_years,Verlauf/Spastik,month_to_year
+tte_spasticity_lower_age_years,Verlauf/Spastik,months_to_year
 tte_spasticity_lower_age_precision,Überblick/Geburtsdatum;Verlauf/Spastik,precision_data_and_months
 tte_spasticity_lower_age_year,Überblick/Geburtsdatum;Verlauf/Spastik,months_to_date_year
 tte_spasticity_lower_onset
 tte_spasticity_lower_comments
-tte_ataxia_age_years,Verlauf/Ataxie,month_to_year
+tte_ataxia_age_years,Verlauf/Ataxie,months_to_year
 tte_ataxia_age_years_precision,Überblick/Geburtsdatum;Verlauf/Ataxie,precision_data_and_months
 tte_ataxia_comments
 tte_ataxia_year,Überblick/Geburtsdatum;Verlauf/Ataxie,months_to_date_year
@@ -367,7 +367,7 @@ tte_loa_ass_age_years
 tte_loa_ass_age_years_precision
 tte_loa_ass_year
 tte_loa_ass_comments
-tte_comm_loss_age_years,Verlauf/Verl. Komm.,month_to_year
+tte_comm_loss_age_years,Verlauf/Verl. Komm.,months_to_year
 tte_comm_loss_age_years_precision,Überblick/Geburtsdatum;Verlauf/Verl. Komm.,precision_data_and_months
 tte_comm_loss_year,Überblick/Geburtsdatum;Verlauf/Verl. Komm.,months_to_date_year
 tte_comm_loss_type
@@ -446,7 +446,7 @@ tte_anti_epileptic
 tte_seizures,Verlauf/Status Epi.,copy_int
 tte_seizures_anticonvulsants
 tte_seizure_detail
-tte_seizures_age_years,Verlauf/1. Epilepsie,month_to_year
+tte_seizures_age_years,Verlauf/1. Epilepsie,months_to_year
 tte_seizures_age_years_precision,Überblick/Geburtsdatum;Verlauf/1. Epilepsie,precision_data_and_months
 tte_seizures_year,Überblick/Geburtsdatum;Verlauf/1. Epilepsie,months_to_date_year
 tte_seizures_eeg

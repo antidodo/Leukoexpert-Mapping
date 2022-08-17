@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 from numpy import int64
-
+from dateutil.relativedelta import relativedelta
 
 def map_data(mapping_df, input_df, output_df):
     """
@@ -18,9 +18,8 @@ def map_data(mapping_df, input_df, output_df):
             continue
         # get all the relevant
         requierd_data_rows = row["exel"].split(";")
-
         mapped = mapping_operation(row["operation"], input_df[requierd_data_rows])
-        print("mapped: {}".format(mapped))
+        #print("mapped: {}".format(mapped))
         output_df[row["leukoregister"]] = mapped
     return output_df
 
@@ -51,7 +50,7 @@ def mapping_operation(operation: str, data):
     elif operation == "floor":
         return pd.DataFrame(list(map(data_floor, data.values))).astype('Int64')
     elif operation == "months_to_date_year":
-        return pd.DataFrame(list(map(months_to_date_year, data.values)))
+        return pd.DataFrame(list(map(months_to_date_year, data.values))).astype('Int64')
     elif operation == "precision":
         return pd.DataFrame(list(map(precision, data.values))).astype('Int64')
     elif operation == "precision_months":
@@ -136,7 +135,6 @@ def month_to_year(data):
     data = data[0]
     if pd.isnull(data):
         return None
-    print(data.dtype)
     assert isinstance(data, (int64,int, float))
 
     return round(data / 12, 2)
@@ -179,8 +177,8 @@ def months_to_date_year(data):
     #TODO
     if pd.isnull(data).any():
         return None
-
-    return "TODO"
+    res = (pd.to_datetime(data[0]) +relativedelta(months=data[1])).year
+    return res
 
 def date_to_age(data):
     """
