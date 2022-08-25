@@ -14,3 +14,7 @@ if __name__ == '__main__':
     leukoregister_file_path = "data/Leukoregister.csv"
     output_template_path = "mapping_csvs/output_template.csv"
     output_path = "output/mapped.csv"
+
+    output_df = pd.read_csv(output_template_path)
+
+    print("Mapping data...")
