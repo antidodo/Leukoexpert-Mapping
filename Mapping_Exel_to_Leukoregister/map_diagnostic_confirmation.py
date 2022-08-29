@@ -1,5 +1,5 @@
 import pandas as pd
-from utils import map_data
+from utils import map_data ,add_df_name_to_column_names
 
 def mapping_diagnostic_confirmation(exel_file_path: str,output_df: pd.DataFrame) -> pd.DataFrame:
     """
@@ -8,10 +8,15 @@ def mapping_diagnostic_confirmation(exel_file_path: str,output_df: pd.DataFrame)
     """
     #TODO find the places that are needed and create the mapping csv
     # get the data from the excel file
-    exel_ueberblick_df = pd.read_excel(exel_file_path, sheet_name="???", usecols="???")
+
+    exel_ueberblick_df = pd.read_excel(exel_file_path, sheet_name="Überblick", usecols="A:X")
+    exel_ueberblick_df =add_df_name_to_column_names(exel_ueberblick_df, "Überblick")
+    exel_verlauf_df = pd.read_excel(exel_file_path, sheet_name="Genetik", usecols="A:BH")
+    exel_verlauf_df = add_df_name_to_column_names(exel_verlauf_df, "Genetik")
+    exel_combind_df = pd.merge(exel_ueberblick_df, exel_verlauf_df, how='right', left_on='Überblick/ID', right_on='Genetik/ID')
     # get the mapping rules from the maping csv
     mapping_df = pd.read_csv("mapping_csvs/diagnostic_confirmation.csv")
     # map the data
-    output_df = map_data(mapping_df, exel_ueberblick_df, output_df)
+    output_df = map_data(mapping_df, exel_combind_df, output_df)
 
     return output_df

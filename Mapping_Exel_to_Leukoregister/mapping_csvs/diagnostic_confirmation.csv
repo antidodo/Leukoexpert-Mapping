@@ -1,6 +1,6 @@
 exel,leukoregister,operation
 Überblick/Geburtsdatum;Genetik/Befunddatum,age_confirmed_molecular_diagnosis,date_to_age
-Überblick/Geburtsdatum;Genetik/Befunddatum,age_confirmed_molecular_diagnosis_precision,check
+Überblick/Geburtsdatum;Genetik/Befunddatum,age_confirmed_molecular_diagnosis_precision,precision_data_and_months
 Genetik/Befunddatum,age_confirmed_molecular_diagnosis_year,date_to_year
 ,rise_diagnosis,
 ,dx_instructions,

@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 from numpy import int64
+import datetime
 from dateutil.relativedelta import relativedelta
 
 def map_data(mapping_df, input_df, output_df):
@@ -55,9 +56,23 @@ def mapping_operation(operation: str, data):
         return pd.DataFrame(list(map(precision, data.values))).astype('Int64')
     elif operation == "precision_months":
         return pd.DataFrame(list(map(precision_months, data.values))).astype('Int64')
+    elif operation == "precision_data_and_months":
+        return pd.DataFrame(list(map(precision_data_and_months, data.values))).astype('Int64')
     else:
         raise ValueError("Unknown operation: {}".format(operation))
 
+def precision_data_and_months(data):
+    """
+    This function returns the precision of the data and months.
+    :param data:
+    :return:
+    """
+    if pd.isnull(data).any():
+        return None
+    if data.size==2 and  isinstance(data[0], datetime.datetime)  and isinstance(data[1], (int, float, np.int64)) and 0 <= data[1] <= 1440:
+        return 1
+    else:
+        return 2
 
 def precision_months(data):
     """
