@@ -1,7 +1,7 @@
-exel,leukoregister,operation
-Überblick/Geburtsdatum;Genetik/Befunddatum,age_confirmed_molecular_diagnosis,date_to_age
+exel,leukoregister,operation, notiz
+Überblick/Geburtsdatum;Genetik/Befunddatum,age_confirmed_molecular_diagnosis,date_to_age, D.Diagnose when kein datum dann in genitetik/befunddatum dund in prersion geschätzt
 Überblick/Geburtsdatum;Genetik/Befunddatum,age_confirmed_molecular_diagnosis_precision,precision_data_and_months
-Genetik/Befunddatum,age_confirmed_molecular_diagnosis_year,date_to_year
+Genetik/Befunddatum,age_confirmed_molecular_diagnosis_year,date_to_year,D.Diagnose when nicht eingetraren
 ,rise_diagnosis,
 ,dx_instructions,
 ,dx_confirmation,
@@ -38,14 +38,17 @@ Genetik/Befunddatum,age_confirmed_molecular_diagnosis_year,date_to_year
 ,cmv_wbab_year,
 ,cmv_wbab_igg,
 ,cmv_wbab_igm,
-,biochem_dx_test_details,
+Biochemie/ARSA-wert,biochem_dx_test_details__1,"map{vermindert:1,:0}",check
+Sulfatide,biochem_dx_test_details__2,"map{ja:1, :0}",check
+,biochem_dx_test_details__98,
+,biochem_dx_test_details__99,
 ,biochem_dx_test_details_other,
 ,biochem_dx_test_details_ags,
 ,biochem_dx_test_details_ags_other,
 ,arsa_dx_age_years,
 ,arsa_dx_age_years_precision,
 ,arsa_dx_year,
-,arsa_dx_activity,
+Biochemie/ARSA-wert;Biochemie/Quelle,arsa_dx_activity,copy_with_condition{Tü},wenn quelle Tü dannd den wertkopiern ansosen nicht
 ,arsa_dx_refrange_lower,
 ,arsa_dx_refrange_upper,
 ,sulfatide_dx_age_years,
@@ -123,22 +126,26 @@ Genetik/Befunddatum,age_confirmed_molecular_diagnosis_year,date_to_year
 ,mol_dx_age_years,
 ,mol_dx_age_years_precision,
 ,mol_dx_year,
-,mol_dx_test_details,
+Genetic/Mut. 1 c.,mol_dx_test_details__1,check,copy when wirgendawas
+,mol_dx_test_details__2,
+,mol_dx_test_details__3,
+,mol_dx_test_details__4,
+,mol_dx_test_details__5,
 ,mol_dx_test_details_comments,
 ,mol_dx_pmd_null,
-,mol_dx_variant_count,
+Genetic/Mut. 1 c/Genetic/Mut. 2 c,mol_dx_variant_count,,"1  wenn Genetic/Mut. 1 c und Genetic/Mut. 2 c identisch, 2 alle wo was drin stehet"
 ,pmd_mol_dx_instructions,
-,mol_dx_gene,
+Genetic/Mut. 1 c.,mol_dx_gene,check{ARSA},"wenn was in Genetic/Mut. 1 c. shet ""ARSA"" als str"
 ,mol_dx_gene_characterization,
 ,mol_dx_gene_characterization_other,
 ,mol_dx_deldup_coordinates,
-,mol_dx_bp,
-,mol_dx_amino_acid,
+Genetic/Mut. 1 c,mol_dx_bp,copy_str
+Genetic/Mut. 1 p,mol_dx_amino_acid,
 ,mol_dx_gene_refseq,
 ,mol_dx_gene_location,
-,mol_dx_gene_zygosity,
+Genetic/Mut. 1 c/Genetic/Mut. 2 c,mol_dx_gene_zygosity,,"1  wenn Genetic/Mut. 1 c und Genetic/Mut. 2 c identisch, 3 alle wo was drin stehet"
 ,mol_dx_gene_zygosity_comments,
-,mol_dx_gene_classification,
+Genetic/Mut.Klasse lt. Befund_1,mol_dx_gene_classification,"map{5:1.4:2.3:3}",Mut.Klasse lt. Befund  5->
 ,mol_dx_gene_classification_comments,
 ,mol_dx_gene_inheritance,
 ,mol_dx_gene_inheritance_comments,
@@ -149,13 +156,13 @@ Genetik/Befunddatum,age_confirmed_molecular_diagnosis_year,date_to_year
 ,mol_dx_gene_characterization_2,
 ,mol_dx_gene_characterization_2_other,
 ,mol_dx_deldup_coordinates_2,
-,mol_dx_bp_2,
-,mol_dx_amino_acid_2,
+Genetic/Mut. 2 c,mol_dx_bp_2,copy_str
+Genetic/Mut. 2 p,mol_dx_amino_acid_2,
 ,mol_dx_gene_refseq_2,
 ,mol_dx_gene_location_2,
 ,mol_dx_gene_zygosity_2,
 ,mol_dx_gene_zygosity_comments_2,
-,mol_dx_gene_classification_2,
+Genetic/Mut.Klasse lt. Befund_2,mol_dx_gene_classification_2,map{5:1.4:2.3:3}
 ,mol_dx_gene_classification_comments_2,
 ,mol_dx_gene_inheritance_2,
 ,mol_dx_gene_inheritance_comments_2,
