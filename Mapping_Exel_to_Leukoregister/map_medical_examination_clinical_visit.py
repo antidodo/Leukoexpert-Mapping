@@ -12,7 +12,7 @@ def mapping_medical_examination_clinical_visit(exel_file_path: str,output_df: pd
     exel_verlauf_df = add_df_name_to_column_names(exel_verlauf_df, "Verlauf")
     exel_combind_df = pd.merge(exel_ueberblick_df, exel_verlauf_df, how='right', left_on='Überblick/ID', right_on='Verlauf/ID')
     # get the mapping rules from the maping csv
-    mapping_df = pd.read_csv("mapping_csvs/first_symptoms.csv")
+    mapping_df = pd.read_csv("mapping_csvs/medical_examination_clinical_visit.csv")
     # map the data
     output_df = map_data(mapping_df, exel_combind_df, output_df)
 

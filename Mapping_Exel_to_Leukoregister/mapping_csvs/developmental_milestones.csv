@@ -39,9 +39,9 @@ dm_get_to_sit_age_lost_year
 dm_get_to_sit_age_precision
 dm_get_to_sit_comments
 dm_sit_status,Entwicklung/Status Freies Sitzen,copy_int
-dm_sit_age_attained,Entwicklung/Freies Sitzen,months_to_year
-dm_sit_age_attained_precision,Entwicklung/Freies Sitzen,precision
-dm_sit_age_attained_year,Überblick/Geburtsdatum;Entwicklung/Freies Sitzen,months_to_date_year
+dm_sit_age_attained,Entwicklung/Freies Sitzen ,months_to_year
+dm_sit_age_attained_precision,Entwicklung/Freies Sitzen ,precision
+dm_sit_age_attained_year,Überblick/Geburtsdatum;Entwicklung/Freies Sitzen ,months_to_date_year
 dm_sit_status_lost
 dm_sit_age_lost
 dm_sit_age_lost_precision
