@@ -7,7 +7,7 @@ Geschlecht,gender,encoding_gender
 EE,ic_present,copy_int
 None,ic_comment,
 verstorben?,decedent,copy_int
-Lebensdauer M.,death_age_years,floor,2 coma stellen anstat ganze zahl
+Lebensdauer M.,death_age_years,to_tow_decimal,2 coma stellen anstat ganze zahl
 ,death_age_years_precision,
 Todesdatum,death_year,date_to_year
 Geburtsdatum;Letzter Kontakt,last_contact_age,date_to_age
@@ -16,5 +16,5 @@ Letzter Kontakt,last_contact_year,date_to_year
 ,cause_death_specify,
 ID kr. Geschwisterkind,affected_sibling,check
 ,affected_sibling_comments,
-ID kr. Geschwisterkind,affected_sibling_study_id,copy_int_geschwiseter,"können 2 zahlen sein getretn ""; """
+ID kr. Geschwisterkind,affected_sibling_study_id,copy_str,"können 2 zahlen sein getretn ""; """
 weitere rel. Erkrankungen,otherdiseases,copy_str

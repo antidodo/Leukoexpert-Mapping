@@ -11,9 +11,15 @@ def mapping_diagnostic_confirmation(exel_file_path: str,output_df: pd.DataFrame)
 
     exel_ueberblick_df = pd.read_excel(exel_file_path, sheet_name="Überblick", usecols="A:X")
     exel_ueberblick_df =add_df_name_to_column_names(exel_ueberblick_df, "Überblick")
-    exel_verlauf_df = pd.read_excel(exel_file_path, sheet_name="Genetik", usecols="A:BH")
-    exel_verlauf_df = add_df_name_to_column_names(exel_verlauf_df, "Genetik")
-    exel_combind_df = pd.merge(exel_ueberblick_df, exel_verlauf_df, how='right', left_on='Überblick/ID', right_on='Genetik/ID')
+
+    exel_genetik_df = pd.read_excel(exel_file_path, sheet_name="Genetik", usecols="A:BH")
+    exel_genetik_df = add_df_name_to_column_names(exel_genetik_df, "Genetik")
+
+    exel_biochemie_df = pd.read_excel(exel_file_path, sheet_name="Biochemie", usecols="A:H")
+    exel_biochemie_df = add_df_name_to_column_names(exel_biochemie_df, "Biochemie")
+
+    exel_combind_df = pd.merge(exel_ueberblick_df, exel_genetik_df, how='right', left_on='Überblick/ID', right_on='Genetik/ID')
+    exel_combind_df = pd.merge(exel_combind_df, exel_biochemie_df, how='right', left_on='Überblick/ID', right_on='Biochemie/ID')
     # get the mapping rules from the maping csv
     mapping_df = pd.read_csv("mapping_csvs/diagnostic_confirmation.csv")
     # map the data

@@ -1,3 +1,5 @@
+import functools
+
 import pandas as pd
 import numpy as np
 from numpy import int64
@@ -32,6 +34,10 @@ def mapping_operation(operation: str, data):
     :param data:
     :return:
     """
+    operation_total = operation.split("{")
+    if len(operation_total) == 2:
+        operation = operation_total[0]
+        mapping_instruction = operation_total[1]
     if operation == "copy_int":
         return pd.DataFrame(list(map(copy_int, data.values))).astype('Int64')
     if operation == "copy_str":
@@ -44,10 +50,16 @@ def mapping_operation(operation: str, data):
         return pd.DataFrame(list(map(date_to_year, data.values))).astype('Int64')
     elif operation == "check":
         return pd.DataFrame(list(map(check, data.values))).astype('Int64')
+    elif operation == "check_int":
+        return pd.DataFrame(list(map(check_int, data.values))).astype('Int64')
+    elif operation == "check_str":
+        return pd.DataFrame(list(map(check_str, data.values))).astype('Int64')
     elif operation == "encoding_gender":
         return pd.DataFrame(list(map(encoding_gender, data.values))).astype('Int64')
     elif operation == "date_to_age":
         return pd.DataFrame(list(map(date_to_age, data.values)))
+    elif operation == "to_tow_decimal":
+        return pd.DataFrame(list(map(to_tow_decimal, data.values)))
     elif operation == "floor":
         return pd.DataFrame(list(map(data_floor, data.values))).astype('Int64')
     elif operation == "months_to_date_year":
@@ -58,8 +70,55 @@ def mapping_operation(operation: str, data):
         return pd.DataFrame(list(map(precision_months, data.values))).astype('Int64')
     elif operation == "precision_data_and_months":
         return pd.DataFrame(list(map(precision_data_and_months, data.values))).astype('Int64')
+    elif operation == "map":
+        return pd.DataFrame(list(map(functools.partial(mapping,mapping_instruction=mapping_instruction), data.values)))
+    elif operation == "copy_with_condition":
+        return pd.DataFrame(list(map(functools.partial(copy_with_condition,condition=mapping_instruction), data.values)))
+    elif operation == "date_to_age_months":
+        return pd.DataFrame(list(map(date_to_age_months, data.values)))
     else:
         raise ValueError("Unknown operation: {}".format(operation))
+
+def copy_with_condition(data, condition):
+    """
+    This function copies the data[0]  if the condition is the same as data[1].
+    :param data:
+    :param mapping_instruction:
+    :return:
+    """
+    if pd.isnull(data).any():
+        return None
+
+    if data[1] == condition:
+        return data[0]
+    else:
+        return None
+
+
+def mapping(data, mapping_instruction):
+    """
+    This function maps the data to the leukoregister.
+    :param data:
+    :param mapping_instruction:
+    :return:
+    """
+
+    if pd.isnull(data):
+        return None
+    list_instructions = mapping_instruction.split(",")
+    default = list_instructions[-1]
+
+    for instruction in list_instructions[:-1]:
+        split_instruction = instruction.split(":")
+        print("data: {}".format(data))
+        if split_instruction[0] == data:
+            print("return: {}".format(split_instruction[1]))
+            print("data: {}".format(data))
+            return split_instruction[1]
+    return default
+
+
+
 
 def precision_data_and_months(data):
     """
@@ -73,6 +132,17 @@ def precision_data_and_months(data):
         return 1
     else:
         return 2
+
+def to_tow_decimal(data):
+    """
+    This function returns the data to two decimal places.
+    :param data:
+    :return:
+    """
+    if pd.isnull(data):
+        return None
+    return round(data[0], 2)
+
 
 def precision_months(data):
     """
@@ -124,7 +194,6 @@ def copy_str(data):
     data = data[0]
     if pd.isnull(data):
         return None
-    assert isinstance(data, (str))
     return data
 
 
@@ -221,7 +290,7 @@ def data_floor(data):
     return int(data)
 
 
-def check(data):
+def check_int(data):
     """
     This function checks if the data is a number or nan
     :param data:
@@ -232,6 +301,31 @@ def check(data):
         return 99
     assert isinstance(data, (int, float))
     return 1
+
+def check_str(data):
+    """
+    This function checks if the data is a str or nan
+    :param data:
+    :return:
+    """
+    data = data[0]
+    if pd.isnull(data):
+        return 99
+    assert isinstance(data, str)
+    return 1
+
+def check(data):
+    """
+    This function checks if ther is a value in the date.
+    :param data:
+    :return:
+    """
+    data = data[0]
+    if pd.isnull(data):
+        return 99
+    assert isinstance(data, (int, float, str))
+    return 1
+
 
 def add_df_name_to_column_names(df, name):
     """
