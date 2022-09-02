@@ -8,10 +8,9 @@ def mapping_treatment(exel_file_path: str,output_df: pd.DataFrame) -> pd.DataFra
     """
     exel_ueberblick_df = pd.read_excel(exel_file_path, sheet_name="Überblick", usecols="A:X")
     exel_ueberblick_df =add_df_name_to_column_names(exel_ueberblick_df, "Überblick")
-    exel_combind_df = pd.merge(exel_ueberblick_df, exel_verlauf_df, how='right', left_on='Überblick/ID', right_on='Verlauf/ID')
     # get the mapping rules from the maping csv
     mapping_df = pd.read_csv("mapping_csvs/treatment.csv")
     # map the data
-    output_df = map_data(mapping_df, exel_combind_df, output_df)
+    output_df = map_data(mapping_df, exel_ueberblick_df, output_df)
 
     return output_df

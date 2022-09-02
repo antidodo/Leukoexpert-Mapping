@@ -6,6 +6,7 @@ from numpy import int64
 import datetime
 from dateutil.relativedelta import relativedelta
 
+
 def map_data(mapping_df, input_df, output_df):
     """
     This takes the mapping_df and interates ofer them and  performs the operations, then save it to the output df
@@ -22,7 +23,7 @@ def map_data(mapping_df, input_df, output_df):
         # get all the relevant
         requierd_data_rows = row["exel"].split(";")
         mapped = mapping_operation(row["operation"], input_df[requierd_data_rows])
-        #print("mapped: {}".format(mapped))
+        # print("mapped: {}".format(mapped))
         output_df[row["leukoregister"]] = mapped
     return output_df
 
@@ -71,15 +72,21 @@ def mapping_operation(operation: str, data):
     elif operation == "precision_data_and_months":
         return pd.DataFrame(list(map(precision_data_and_months, data.values))).astype('Int64')
     elif operation == "map":
-        return pd.DataFrame(list(map(functools.partial(mapping,mapping_instruction=mapping_instruction), data.values)))
+        return pd.DataFrame(list(map(functools.partial(mapping, mapping_instruction=mapping_instruction), data.values)))
     elif operation == "copy_with_condition":
-        return pd.DataFrame(list(map(functools.partial(copy_with_condition,condition=mapping_instruction), data.values)))
+        return pd.DataFrame(
+            list(map(functools.partial(copy_with_condition, conditions=mapping_instruction), data.values)))
+    elif operation == "compair_first_if_identical_second_else":
+        return pd.DataFrame(list(
+            map(functools.partial(compair_first_if_identical_second_else, choses=mapping_instruction), data.values)))
+    elif operation == "date_to_year_with_condition":
+        return pd.DataFrame(list(map(functools.partial(date_to_year_with_condition, conditions=mapping_instruction), data.values))).astype('Int64')
     elif operation == "date_to_age_months":
         return pd.DataFrame(list(map(date_to_age_months, data.values)))
     else:
         raise ValueError("Unknown operation: {}".format(operation))
 
-def copy_with_condition(data, condition):
+def date_to_year_with_condition(data, conditions):
     """
     This function copies the data[0]  if the condition is the same as data[1].
     :param data:
@@ -88,11 +95,44 @@ def copy_with_condition(data, condition):
     """
     if pd.isnull(data).any():
         return None
+    conditions = conditions.split(",")
+    for condition in conditions:
+        if str(data[1]) == condition:
+            re =pd.to_datetime(data[0]).year
+            return re
 
-    if data[1] == condition:
-        return data[0]
-    else:
+    return None
+
+def compair_first_if_identical_second_else(data, choses):
+    """
+    This function cpares the tow elemets in data if they are identical it returns the first element of choses eles it retruns the socond one
+    :param data:
+    :param mapping_instruction:
+    :return:
+    """
+    if pd.isnull(data).any():
         return None
+    choses = choses.split(",")
+    if data[0] == data[1]:
+        return choses[0]
+    else:
+        return choses[1]
+
+
+def copy_with_condition(data, conditions):
+    """
+    This function copies the data[0]  if the condition is the same as data[1].
+    :param data:
+    :param mapping_instruction:
+    :return:
+    """
+    if pd.isnull(data).any():
+        return None
+    for condition in conditions.split(","):
+        if data[1] == condition:
+            return data[0]
+
+    return None
 
 
 def mapping(data, mapping_instruction):
@@ -110,14 +150,9 @@ def mapping(data, mapping_instruction):
 
     for instruction in list_instructions[:-1]:
         split_instruction = instruction.split(":")
-        print("data: {}".format(data))
         if split_instruction[0] == data:
-            print("return: {}".format(split_instruction[1]))
-            print("data: {}".format(data))
             return split_instruction[1]
     return default
-
-
 
 
 def precision_data_and_months(data):
@@ -128,10 +163,13 @@ def precision_data_and_months(data):
     """
     if pd.isnull(data).any():
         return None
-    if data.size==2 and  isinstance(data[0], datetime.datetime)  and isinstance(data[1], (int, float, np.int64)) and 0 <= data[1] <= 1440:
+    if data.size == 2 and isinstance(data[0], datetime.datetime) and isinstance(data[1],
+                                                                                (int, float, np.int64)) and 0 <= data[
+        1] <= 1440:
         return 1
     else:
         return 2
+
 
 def to_tow_decimal(data):
     """
@@ -166,7 +204,7 @@ def precision(data):
     """
     if pd.isnull(data).any():
         return None
-    if data.size==2 and data.dtype=='datetime64[ns]':
+    if data.size == 2 and data.dtype == 'datetime64[ns]':
         return 1
     else:
         return 2
@@ -219,7 +257,7 @@ def month_to_year(data):
     data = data[0]
     if pd.isnull(data):
         return None
-    assert isinstance(data, (int64,int, float))
+    assert isinstance(data, (int64, int, float))
 
     return round(data / 12, 2)
 
@@ -252,17 +290,19 @@ def date_to_year(data):
         return None
     return pd.to_datetime(data).year.values[0]
 
+
 def months_to_date_year(data):
     """
     This function gets the one date and months and returns the date year.
     :param data:
     :return:
     """
-    #TODO
+    # TODO
     if pd.isnull(data).any():
         return None
-    res = (pd.to_datetime(data[0]) +relativedelta(months=data[1])).year
+    res = (pd.to_datetime(data[0]) + relativedelta(months=data[1])).year
     return res
+
 
 def date_to_age(data):
     """
@@ -302,6 +342,7 @@ def check_int(data):
     assert isinstance(data, (int, float))
     return 1
 
+
 def check_str(data):
     """
     This function checks if the data is a str or nan
@@ -313,6 +354,7 @@ def check_str(data):
         return 99
     assert isinstance(data, str)
     return 1
+
 
 def check(data):
     """

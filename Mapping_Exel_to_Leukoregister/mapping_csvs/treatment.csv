@@ -1,20 +1,20 @@
 leukoregister,exel,operation,notiz
-tte_bmt,Überblic/Therpie,map{1:1.:0}
+tte_bmt,Überblick/Therapie,"map{1:1,0"
 tte_bmt_type
-tte_bmt_age_years,Überblic/Therpie;Überblic/Alter bei Therapiebeginn,copy_if_,only copy when Therpie =1
+tte_bmt_age_years,Überblick/Alter bei Therapiebeginn;Überblick/Therapie,copy_with_condition{1,only copy when Therpie =1
 tte_bmt_age_years_precision
-tte_bmt_year,Überblic/Therpie;Überblic/Beg. der Therapie,date_to_year_if,nur Überblic/Therpie 1
+tte_bmt_year,Überblick/Beg. der Therapie;Überblick/Therapie,date_to_year_with_condition{1,nur Überblic/Therpie 1
 tte_bmt_comments
-tte_gt,Überblic/Therpie,map{1:4.:0}
-tte_gt_age_years,Überblic/Therpie;Überblic/Alter bei Therapiebeginn,copy_if_, Therpie 4
+tte_gt,Überblick/Therapie,"map{1:4,:0"
+tte_gt_age_years,Überblick/Alter bei Therapiebeginn;Überblick/Therapie,copy_with_condition{4, Therpie 4
 tte_gt_age_years_precision,"",""
-tte_gt_year,Überblic/Therpie;Überblic/Beg. der Therapie,date_to_year_if,Therapie 4
+tte_gt_year,Überblick/Therapie;Überblick/Beg. der Therapie,date_to_year_with_condition{1,Therapie 4
 tte_gt_comments
-tte_ert,Überblic/Therpie,map{3:1.2:1.:0}
-tte_ert_appl,Überblic/Therpie,map{2:1.3:2},3.2
-tte_ert_age_years,Überblic/Therpie;Überblic/Alter bei Therapiebeginn,copy_if_,3 2
+tte_ert,Überblick/Therapie,"map{3:1,2:1,:0"
+tte_ert_appl,Überblick/Therapie,"map{2:1,3:2",3.2
+tte_ert_age_years,Überblick/Alter bei Therapiebeginn;Überblick/Therapie,"copy_with_condition{3,2",3 2
 tte_ert_age_years_precision
-tte_ert_year,Überblic/Therpie;Überblic/Beg. der Therapie,date_to_year_if,3 2
+tte_ert_year,Überblick/Therapie;Überblick/Beg. der Therapie,"date_to_year_with_condition{3,2",3 2
 tte_ert_comments
 tte_ifn
 tte_ifn_start_age_years
