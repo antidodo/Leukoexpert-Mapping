@@ -38,7 +38,7 @@ Genetik/Befunddatum,age_confirmed_molecular_diagnosis_year,date_to_year,D.Diagno
 ,cmv_wbab_year,
 ,cmv_wbab_igg,
 ,cmv_wbab_igm,
-Biochemie/ARSA-Aktivität,biochem_dx_test_details__1,"map{vermindert:1,0", check ??? muss ich noch mal nachfragen Biochemie/ARSA Wert;Biochemie/Quelle
+Biochemie/ARSA-Aktivität,biochem_dx_test_details__1,"map{vermindert:1,0", check ??? muss ich noch mal nachfragen Biochemie/ARSA Wert;Biochemie/Quelle biochem_dx_test_details__1
 Biochemie/Sulfatide,biochem_dx_test_details__2,"map{ja:1,0",check
 ,biochem_dx_test_details__98,
 ,biochem_dx_test_details__99,

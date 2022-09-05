@@ -12,7 +12,7 @@ def mapping_diagnostic_confirmation(exel_file_path: str,output_df: pd.DataFrame)
     exel_ueberblick_df = pd.read_excel(exel_file_path, sheet_name="Überblick", usecols="A:X")
     exel_ueberblick_df =add_df_name_to_column_names(exel_ueberblick_df, "Überblick")
 
-    exel_genetik_df = pd.read_excel(exel_file_path, sheet_name="Genetik", usecols="A:BH")
+    exel_genetik_df = pd.read_excel(exel_file_path, sheet_name="Genetik", usecols="A:W")
     exel_genetik_df = add_df_name_to_column_names(exel_genetik_df, "Genetik")
 
     exel_biochemie_df = pd.read_excel(exel_file_path, sheet_name="Biochemie", usecols="A:H")

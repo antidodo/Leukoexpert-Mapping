@@ -1,12 +1,12 @@
 leukoexpert,leukoregister,operation
-registry_inclusion,ic_present,map{1:2/0:1}
+registry_inclusion,ic_present,"map{1:2,0:1"
 date_of_study_inclusion
 gender,gender,copy_int
 dob,birth_year,year_to_MM_YYYY
 eth
 specify_ethnicity
 diagnostic_evidence11,???
-diagnosed_leuk,dx_details,map{20:7/8:8/9:9}
+diagnosed_leuk,dx_details,"map{20:7,8:8,9:9"
 diagnosis___1,dx_confirmation___2,copy_int
 diagnosis___2,dx_confirmation___1,copy_int
 diagnosis___3,dx_confirmation___98,copy_int

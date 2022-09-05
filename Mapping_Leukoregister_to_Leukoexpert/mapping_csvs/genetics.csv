@@ -1,7 +1,7 @@
 leukoexpert,leukoregister,operation
 year_of_genetic_testing,age_confirmed_molecular_diagnosis,round_year
 affected_gene,???,???
-zygosity,mol_dx_gene_zygosity,map{1:1/4:1/2:2/3:3}
+zygosity,mol_dx_gene_zygosity,"map{1:1,4:1,2:2,3:3"
 disease_relavant_mutation
 disease_relavant_mutation_2
 acmg_classification
