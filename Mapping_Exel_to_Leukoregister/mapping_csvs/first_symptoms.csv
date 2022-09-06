@@ -15,21 +15,21 @@ first_symptoms_ags_bldc_comments
 first_symptoms_ags_strk_comments
 first_symptoms_ags_derm_comments
 first_symptoms_ags_fevr_comments
-first_symptoms___1,Onset/Auffälliges Gehen_1,copy_int
-first_symptoms___2,Onset/Feinmotorik_1,copy_int
-first_symptoms___3,Onset/Muskuläre Schwäche_1,copy_int
-first_symptoms___4,Onset/Spastik/Spitzfuß_1,copy_int
-first_symptoms___5,Onset/Koordination_1,copy_int
-first_symptoms___6,Onset/Kognition_1,copy_int
-first_symptoms___7,Onset/Auffällige Sprache_1,copy_int
-first_symptoms___8,Onset/Verhaltensauffälligkeiten_1,copy_int
-first_symptoms___9
-first_symptoms___10,Onset/Unruhe,copy_int
-first_symptoms___11,,
-first_symptoms___12,Onset/Epilepsie_1,copy_int
-first_symptoms___13,Onset/Augenbewegungsstörung_1,copy_int
-first_symptoms___14
-first_symptoms___15
-first_symptoms___98
-first_symptoms___99
+first_symptoms___1,Onset/Auffälliges Gehen_1,copy_int_default{0
+first_symptoms___2,Onset/Feinmotorik_1,copy_int_default{0
+first_symptoms___3,Onset/Muskuläre Schwäche_1,copy_int_default{0
+first_symptoms___4,Onset/Spastik/Spitzfuß_1,copy_int_default{0
+first_symptoms___5,Onset/Koordination_1,copy_int_default{0
+first_symptoms___6,Onset/Kognition_1,copy_int_default{0
+first_symptoms___7,Onset/Auffällige Sprache_1,copy_int_default{0
+first_symptoms___8,Onset/Verhaltensauffälligkeiten_1,copy_int_default{0
+first_symptoms___9,Überblick/ID,default{0
+first_symptoms___10,Onset/Unruhe,copy_int_default{0
+first_symptoms___11,Überblick/ID,default{0
+first_symptoms___12,Onset/Epilepsie_1,copy_int_default{0
+first_symptoms___13,Onset/Augenbewegungsstörung_1,copy_int_default{0
+first_symptoms___14,Überblick/ID,default{0
+first_symptoms___15,Überblick/ID,default{0
+first_symptoms___98,Überblick/ID,default{0
+first_symptoms___99,Überblick/ID,default{0
 first_symptoms_comments,,""

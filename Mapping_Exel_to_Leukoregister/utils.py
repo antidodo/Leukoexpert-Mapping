@@ -81,10 +81,36 @@ def mapping_operation(operation: str, data):
             map(functools.partial(compair_first_if_identical_second_else, choses=mapping_instruction), data.values)))
     elif operation == "date_to_year_with_condition":
         return pd.DataFrame(list(map(functools.partial(date_to_year_with_condition, conditions=mapping_instruction), data.values))).astype('Int64')
-    elif operation == "date_to_age_months":
-        return pd.DataFrame(list(map(date_to_age_months, data.values)))
+    elif operation == "copy_int_default":
+        return pd.DataFrame(list(map(functools.partial(copy_int_default, default=mapping_instruction), data.values))).astype('Int64')
+    elif operation == "default":
+        return pd.DataFrame(list(map(functools.partial(default, default=mapping_instruction), data.values)))
+    #elif operation == "date_to_age_months":
+    #    return pd.DataFrame(list(map(date_to_age_months, data.values)))
     else:
         raise ValueError("Unknown operation: {}".format(operation))
+def default(data, default):
+    """
+    this function retruns the default value
+    :param data:
+    :param mapping_instruction:
+    :return:
+    """
+    return default
+
+
+def copy_int_default(data, default):
+    """
+    This funkction cast the data to int and if data is none it returns the default
+    :param data:
+    :param mapping_instruction:
+    :return:
+    """
+    data = data[0]
+    if pd.isnull(data):
+        return int(default)
+    assert isinstance(data, (int, float, np.int64))
+    return int(data)
 
 def date_to_year_with_condition(data, conditions):
     """
