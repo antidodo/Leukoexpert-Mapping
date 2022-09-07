@@ -38,10 +38,10 @@ Genetik/Befunddatum,age_confirmed_molecular_diagnosis_year,date_to_year,D.Diagno
 ,cmv_wbab_year,
 ,cmv_wbab_igg,
 ,cmv_wbab_igm,
-Biochemie/ARSA-Aktivität,biochem_dx_test_details__1,"map{vermindert:1,0", check ??? muss ich noch mal nachfragen Biochemie/ARSA Wert;Biochemie/Quelle biochem_dx_test_details__1
-Biochemie/Sulfatide,biochem_dx_test_details__2,"map{ja:1,0",check
-,biochem_dx_test_details__98,
-,biochem_dx_test_details__99,
+Biochemie/ARSA-Aktivität,biochem_dx_test_details___1,"map{vermindert:1,0", check ??? muss ich noch mal nachfragen Biochemie/ARSA Wert;Biochemie/Quelle biochem_dx_test_details__1
+Biochemie/Sulfatide,biochem_dx_test_details___2,"map{ja:1,0",check
+Überblick/ID,biochem_dx_test_details___98,default{0
+Überblick/ID,biochem_dx_test_details___99,default{0
 ,biochem_dx_test_details_other,
 ,biochem_dx_test_details_ags,
 ,biochem_dx_test_details_ags_other,
@@ -126,24 +126,24 @@ Biochemie/ARSA Wert;Biochemie/Quelle,arsa_dx_activity,copy_with_condition{Tü,we
 ,mol_dx_age_years,
 ,mol_dx_age_years_precision,
 ,mol_dx_year,
-Genetik/Mut. 1 c.,mol_dx_test_details__1,check,copy when wirgendawas
-,mol_dx_test_details__2,
-,mol_dx_test_details__3,
-,mol_dx_test_details__4,
-,mol_dx_test_details__5,
+Genetik/Mut. 1 c.,mol_dx_test_details___1,"check{1,0",copy when wirgendawas
+,mol_dx_test_details___2,
+,mol_dx_test_details___3,
+,mol_dx_test_details___4,
+,mol_dx_test_details___5,
 ,mol_dx_test_details_comments,
 ,mol_dx_pmd_null,
 Genetik/Mut. 1 c.;Genetik/Mut. 2 c.,mol_dx_variant_count,"compair_first_if_identical_second_else{1,2","1  wenn Genetic/Mut. 1 c und Genetic/Mut. 2 c identisch, 2 alle wo was drin stehet"
 ,pmd_mol_dx_instructions,
-Genetik/Mut. 1 c.,mol_dx_gene,check{ARSA,"wenn was in Genetic/Mut. 1 c. shet ""ARSA"" als str"
+Genetik/Mut. 1 c.,mol_dx_gene,"check{ARSA,None","wenn was in Genetic/Mut. 1 c. shet ""ARSA"" als str (wenn irgedwas in )???"
 ,mol_dx_gene_characterization,
 ,mol_dx_gene_characterization_other,
 ,mol_dx_deldup_coordinates,
 Genetik/Mut. 1 c.,mol_dx_bp,copy_str
-Genetik/Mut. 1 p.,mol_dx_amino_acid,
+Genetik/Mut 1. p.,mol_dx_amino_acid,copy_str
 ,mol_dx_gene_refseq,
 ,mol_dx_gene_location,
-Genetik/Mut. 1 c.;Genetik/Mut. 2 c.,mol_dx_gene_zygosity,,"1  wenn Genetic/Mut. 1 c und Genetic/Mut. 2 c identisch, 3 alle wo was drin stehet"
+Genetik/Mut. 1 c.;Genetik/Mut. 2 c.,mol_dx_gene_zygosity,"compair_first_if_identical_second_else{1,2","1  wenn Genetic/Mut. 1 c und Genetic/Mut. 2 c identisch, 3 alle wo was drin stehet"
 ,mol_dx_gene_zygosity_comments,
 Genetik/Mut.Klasse lt. Befund_1,mol_dx_gene_classification,"map{5:1,4:2,3:3",Mut.Klasse lt. Befund  5->
 ,mol_dx_gene_classification_comments,
@@ -157,7 +157,7 @@ Genetik/Mut.Klasse lt. Befund_1,mol_dx_gene_classification,"map{5:1,4:2,3:3",Mut
 ,mol_dx_gene_characterization_2_other,
 ,mol_dx_deldup_coordinates_2,
 Genetik/Mut. 2 c.,mol_dx_bp_2,copy_str
-Genetik/Mut. 2 p.,mol_dx_amino_acid_2,
+Genetik/Mut. 2. p.,mol_dx_amino_acid_2,copy_str
 ,mol_dx_gene_refseq_2,
 ,mol_dx_gene_location_2,
 ,mol_dx_gene_zygosity_2,

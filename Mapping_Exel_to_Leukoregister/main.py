@@ -38,7 +38,7 @@ def mapp_exel_to_leuko_register():
     print("developmental milestones mapped")
     #output_df = mapping_medical_examination_clinical_visit(excel_file_path,output_df)
     print("medical examination clinical visit mapped")
-    #output_df = mapping_treatment(excel_file_path,output_df)
+    output_df = mapping_treatment(excel_file_path,output_df)
     #print("treatment mapped")
     print("Mapping done")
     #save the mapped data to a csv

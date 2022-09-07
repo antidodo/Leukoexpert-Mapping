@@ -35,10 +35,12 @@ def mapping_operation(operation: str, data):
     :param data:
     :return:
     """
+    mapping_instruction = None
     operation_total = operation.split("{")
     if len(operation_total) == 2:
         operation = operation_total[0]
         mapping_instruction = operation_total[1]
+
     if operation == "copy_int":
         return pd.DataFrame(list(map(copy_int, data.values))).astype('Int64')
     if operation == "copy_str":
@@ -50,7 +52,7 @@ def mapping_operation(operation: str, data):
     elif operation == "date_to_year":
         return pd.DataFrame(list(map(date_to_year, data.values))).astype('Int64')
     elif operation == "check":
-        return pd.DataFrame(list(map(check, data.values))).astype('Int64')
+        return pd.DataFrame(list(map(functools.partial(check, condition=mapping_instruction), data.values)))
     elif operation == "check_int":
         return pd.DataFrame(list(map(check_int, data.values))).astype('Int64')
     elif operation == "check_str":
@@ -85,10 +87,35 @@ def mapping_operation(operation: str, data):
         return pd.DataFrame(list(map(functools.partial(copy_int_default, default=mapping_instruction), data.values))).astype('Int64')
     elif operation == "default":
         return pd.DataFrame(list(map(functools.partial(default, default=mapping_instruction), data.values)))
+    elif operation == "check_with_condition":
+        return pd.DataFrame(list(map(functools.partial(check_with_condition, condition=mapping_instruction), data.values)))
     #elif operation == "date_to_age_months":
     #    return pd.DataFrame(list(map(date_to_age_months, data.values)))
     else:
         raise ValueError("Unknown operation: {}".format(operation))
+
+def check_with_condition(data, condition):
+    """
+    this function checks if the data is equal to the condition[0] if that is the case it returns the condition[1] else it returns the condition[2]
+    :param data:
+    :param condition:
+    :return:
+    """
+    if pd.isnull(data).any():
+        return None
+    conditions = condition.split(",")
+    if conditions[0].isnumeric():
+        conditions[0] = int(conditions[0])
+    if conditions[1].isnumeric():
+        conditions[1] = int(conditions[1])
+    if conditions[2] == "None":
+        conditions[2] = None
+    if data == conditions[0]:
+        return conditions[1]
+    else:
+        return conditions[2]
+
+
 def default(data, default):
     """
     this function retruns the default value
@@ -176,6 +203,8 @@ def mapping(data, mapping_instruction):
 
     for instruction in list_instructions[:-1]:
         split_instruction = instruction.split(":")
+        if split_instruction[0].isnumeric():
+            split_instruction[0] = int(split_instruction[0])
         if split_instruction[0] == data:
             return split_instruction[1]
     return default
@@ -382,17 +411,29 @@ def check_str(data):
     return 1
 
 
-def check(data):
+def check(data, condition):
     """
-    This function checks if ther is a value in the date.
+    This function checks if ther is a value in the date.if conditions are given the first will be retunrt when tehr is somthing and the second if its nan
     :param data:
     :return:
     """
+
     data = data[0]
-    if pd.isnull(data):
-        return 99
-    assert isinstance(data, (int, float, str))
-    return 1
+    if condition is  None:
+
+        if pd.isnull(data):
+
+            return 99
+        assert isinstance(data, (int, float, str))
+        return 1
+    else:
+        condition = condition.split(",")
+        if condition[1] == "None":
+            condition[1] = None
+        if pd.isnull(data):
+            return condition[1]
+
+        return condition[0]
 
 
 def add_df_name_to_column_names(df, name):
