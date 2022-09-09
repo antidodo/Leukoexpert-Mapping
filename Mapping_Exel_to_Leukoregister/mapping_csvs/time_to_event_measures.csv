@@ -1,6 +1,6 @@
-leukoregister,exel,operation
-tte_medrec_lower_age_years
-tte_medrec_lower_age_years_precision
+leukoregister,exel,operation,notes
+tte_medrec_lower_age_years,,,"die status können 1 , 2, 0 oder null sein 1:1 0:0 2:0 :99 "
+tte_medrec_lower_age_years_precision,,,"map{1:1,0:0,2:0,99"
 tte_medrec_upper_age_years
 tte_medrec_upper_age_years_precision
 tte_cvi
@@ -92,10 +92,10 @@ tte_hypertension_mgmt
 tte_hypertension_comments
 tte_failure_to_thrive
 tte_gerd
-tte_dysphagia,Verlauf/Status Schlu.,copy_int
+tte_dysphagia,Verlauf/Status Schlu.,"map{1:1,0:0,2:0,99"
 tte_iugr
 tte_recurrent_vomiting
-tte_feeding_tube,Verlauf/Status PEG/MS,copy_int
+tte_feeding_tube,Verlauf/Status PEG/MS,"map{1:1,0:0,2:0,99"
 tte_gastric_feeds
 tte_ibd
 tte_liver_abn
@@ -236,7 +236,8 @@ tte_diabetes_insipidus_age_years
 tte_diabetes_insipidus_age_years_precision
 tte_diabetes_insipidus_year
 tte_diabetes_insipidus_comments
-tte_mmm,Verlauf/Status Muskelschwäche,copy_int
+tte_mmm,,,""
+tte_muscle_weakness,Verlauf/Status Muskelschwäche,"map{1:1,0:0,2:0,99"
 tte_arthropathy
 tte_joint_flexibility
 tte_scoliosis
@@ -246,11 +247,16 @@ tte_hip_dislocation
 tte_hip_surgery
 tte_scoliosis_surgery
 tte_musculoskeletal_detail
-tte_mmm_age_years,Verlauf/Muskelschwäche,months_to_year
-tte_mmm_age_years_precision,Überblick/Geburtsdatum;Verlauf/Muskelschwäche,precision_data_and_months
-tte_mmm_year,Überblick/Geburtsdatum;Verlauf/Muskelschwäche,months_to_date_year
+tte_mmm_age_years
+tte_mmm_age_years_precision
+tte_mmm_year
 tte_mmm_diagnosis
-tte_mmm_comments,"",""
+tte_mmm_comments
+tte_muscle_weakness_age_years,Verlauf/Muskelschwäche,months_to_year
+tte_muscle_weakness_age_years_precision,Überblick/Geburtsdatum;Verlauf/Muskelschwäche,precision_data_and_months
+tte_muscle_weakness_year,Überblick/Geburtsdatum;Verlauf/Muskelschwäche,months_to_date_year
+tte_muscle_weakness_diagnosis
+tte_muscle_weakness_comments
 tte_arthropathy_age_years
 tte_arthropathy_age_years_precision
 tte_arthropathy_year
@@ -299,18 +305,18 @@ tte_skin_abn_frequency
 tte_skin_abn_comments
 tte_hc_abn
 tte_axial_hypotonia
-tte_spasticity_lower,Verlauf/Status Spastik,copy_int
-tte_ataxia,Verlauf/Status Ataxie,copy_int
-tte_dystonia
+tte_spasticity,Verlauf/Status Spastik,"map{1:1,0:0,2:0,99"
+tte_ataxia,Verlauf/Status Ataxie,"map{1:1,0:0,2:0,99"
+tte_dystonia,Verlauf/Status Dyskinesie,"map{1:1,0:0,2:0,99"
 tte_cranial_neuropathy
 tte_peripheral_neuropathy
 tte_motor_change
 tte_iso_cog_delay
 tte_iso_gm_delay
 tte_developmental_delay
-tte_loa_ass
-tte_comm_loss,Verlauf/Status Kom.,copy_int
-tte_loa
+tte_loa_ass,Verlauf/Status 3,"map{1:1,0:0,2:0,99"
+tte_comm_loss,Verlauf/Status Kom.,"map{1:1,0:0,2:0,99"
+tte_loa,Verlauf/Status 2,"map{1:1,0:0,2:0,99"
 tte_neurologic_detail
 tte_hc_abn_age_years
 tte_hc_abn_age_years_precision
@@ -321,8 +327,8 @@ tte_axial_hypotonia_age_years
 tte_axial_hypotonia_age_years_precision
 tte_axial_hypotonia_year
 tte_axial_hypotonia_comments
-tte_spasticity_lower_age_years,Verlauf/Spastik,months_to_year
-tte_spasticity_lower_age_precision,Überblick/Geburtsdatum;Verlauf/Spastik,precision_data_and_months
+tte_spasticity_age_years,Verlauf/Spastik,months_to_year
+tte_spasticity_age_precision,Überblick/Geburtsdatum;Verlauf/Spastik,precision_data_and_months
 tte_spasticity_lower_age_year,Überblick/Geburtsdatum;Verlauf/Spastik,months_to_date_year
 tte_spasticity_lower_onset
 tte_spasticity_lower_comments
@@ -330,7 +336,7 @@ tte_ataxia_age_years,Verlauf/Ataxie,months_to_year
 tte_ataxia_age_years_precision,Überblick/Geburtsdatum;Verlauf/Ataxie,precision_data_and_months
 tte_ataxia_comments
 tte_ataxia_year,Überblick/Geburtsdatum;Verlauf/Ataxie,months_to_date_year
-tte_dystonia_age_years
+tte_dystonia_age_years,,,add wie die andern
 tte_dystonia_age_years_precision
 tte_dystonia_year
 tte_dystonia_type
@@ -363,7 +369,7 @@ tte_developmental_delay_age_years
 tte_developmental_delay_age_precision
 tte_developmental_delay_age_year
 tte_developmental_delay_comments
-tte_loa_ass_age_years
+tte_loa_ass_age_years,,,wie die andern
 tte_loa_ass_age_years_precision
 tte_loa_ass_year
 tte_loa_ass_comments
@@ -376,7 +382,7 @@ tte_comm_loss_vocab_frequency
 tte_comm_loss_dysarthria_frequency
 tte_comm_loss_onset
 tte_comm_loss_comments
-tte_loa_age_years
+tte_loa_age_years,,,wie die andern Verlauf/GMFC 2
 tte_loa_age_years_precision
 tte_loa_year
 tte_loa_comments
@@ -443,7 +449,7 @@ tte_sdr_age_precision
 tte_sdr_comments
 tte_sdr_age_year
 tte_anti_epileptic
-tte_seizures,Verlauf/Status Epi.,copy_int
+tte_seizures,Verlauf/Status Epi.,"map{1:1,0:0,2:0,99"
 tte_seizures_anticonvulsants
 tte_seizure_detail
 tte_seizures_age_years,Verlauf/1. Epilepsie,months_to_year
