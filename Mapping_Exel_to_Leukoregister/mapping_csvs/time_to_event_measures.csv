@@ -336,9 +336,9 @@ tte_ataxia_age_years,Verlauf/Ataxie,months_to_year
 tte_ataxia_age_years_precision,Überblick/Geburtsdatum;Verlauf/Ataxie,precision_data_and_months
 tte_ataxia_comments
 tte_ataxia_year,Überblick/Geburtsdatum;Verlauf/Ataxie,months_to_date_year
-tte_dystonia_age_years,,,add wie die andern
-tte_dystonia_age_years_precision
-tte_dystonia_year
+tte_dystonia_age_years,Verlauf/Dyskinesie,months_to_year,add wie die andern
+tte_dystonia_age_years_precision,Überblick/Geburtsdatum;Verlauf/Dyskinesie,precision_data_and_months
+tte_dystonia_year,Überblick/Geburtsdatum;Verlauf/Dyskinesie,months_to_date_year
 tte_dystonia_type
 tte_dystonia_comments
 tte_cranial_neuropathy_age_years
@@ -369,9 +369,9 @@ tte_developmental_delay_age_years
 tte_developmental_delay_age_precision
 tte_developmental_delay_age_year
 tte_developmental_delay_comments
-tte_loa_ass_age_years,,,wie die andern
-tte_loa_ass_age_years_precision
-tte_loa_ass_year
+tte_loa_ass_age_years,Verlauf/GMFC 3,months_to_year,wie die andern GMFC 3
+tte_loa_ass_age_years_precision,Überblick/Geburtsdatum;Verlauf/GMFC 3,precision_data_and_months
+tte_loa_ass_year,Überblick/Geburtsdatum;Verlauf/GMFC 3,months_to_date_year
 tte_loa_ass_comments
 tte_comm_loss_age_years,Verlauf/Verl. Komm.,months_to_year
 tte_comm_loss_age_years_precision,Überblick/Geburtsdatum;Verlauf/Verl. Komm.,precision_data_and_months
@@ -382,9 +382,9 @@ tte_comm_loss_vocab_frequency
 tte_comm_loss_dysarthria_frequency
 tte_comm_loss_onset
 tte_comm_loss_comments
-tte_loa_age_years,,,wie die andern Verlauf/GMFC 2
-tte_loa_age_years_precision
-tte_loa_year
+tte_loa_age_years,Verlauf/GMFC 2,months_to_year,wie die andern Verlauf/GMFC 2
+tte_loa_age_years_precision,Überblick/Geburtsdatum;Verlauf/GMFC 2,precision_data_and_months
+tte_loa_year,Überblick/Geburtsdatum;Verlauf/GMFC 2,months_to_date_year
 tte_loa_comments
 tte_irritability
 tte_lethargy
