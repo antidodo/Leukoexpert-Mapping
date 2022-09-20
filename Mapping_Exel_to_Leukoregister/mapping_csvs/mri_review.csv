@@ -3,12 +3,12 @@ mri_1_age_years,Überblick/Geburtsdatum;MRT/MRT 1 Datum,date_to_age
 mri_1_age_years_precision,Überblick/Geburtsdatum;MRT/MRT 1 Datum,precision
 mri_1_year,MRT/MRT 1 Datum,date_to_year
 mri_1_dicom,MRT/Bilder?,copy_int
-mri_1_study_modality
+mri_1_study_modality,sequence ,,"map{ 0:2(1,20,3):1"
 mri_1_index
 mri_1_index_comments
-mrs_1
+mrs_1,mritabel/mrs,,"map{0:0,1:1,2:1"
 mri_1_total_score
-mri_1_total_score_3
+mri_1_total_score_3,mritabel/MRIscore,copy_int
 mri_1_total_score_2
 mri_1_additional
 mri_2_age_years,Überblick/Geburtsdatum;MRT/MRT 2 Datum,date_to_age
