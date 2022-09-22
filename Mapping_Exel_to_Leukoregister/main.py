@@ -18,6 +18,7 @@ def mapp_exel_to_leuko_register():
     # get file name from args
     # curently as hardcoded variables drunig development
     excel_file_path = "data/Tabelle_MLD_Datenstruktur.xlsx"
+    mrt_database_file_path = "data/MLD_MRT_database_kopie.csv"
     output_template_path = "mapping_csvs/output_template.csv"
     output_path = "output/mapped.csv"
 
@@ -26,7 +27,7 @@ def mapp_exel_to_leuko_register():
 
     output_df = mapping_demographics(excel_file_path,output_df)
     print("demographics mapped")
-    #output_df = mapping_mri_review(excel_file_path,output_df)
+    output_df = mapping_mri_review(excel_file_path,mrt_database_file_path,output_df)
     print("mri review mapped")
     output_df = mapping_first_symptoms(excel_file_path,output_df)
     print("first symptoms mapped")

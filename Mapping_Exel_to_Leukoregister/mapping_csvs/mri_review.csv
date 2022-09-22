@@ -1,14 +1,14 @@
-leukoregister,exel,operation
+leukoregister,exel,operation,notes
 mri_1_age_years,Überblick/Geburtsdatum;MRT/MRT 1 Datum,date_to_age
 mri_1_age_years_precision,Überblick/Geburtsdatum;MRT/MRT 1 Datum,precision
 mri_1_year,MRT/MRT 1 Datum,date_to_year
 mri_1_dicom,MRT/Bilder?,copy_int
-mri_1_study_modality,sequence ,,"map{ 0:2(1,20,3):1"
+mri_1_study_modality,MRT_Datenbank/sequence ,,"map{ 0:2(1,20,3):1"
 mri_1_index
 mri_1_index_comments
-mrs_1,mritabel/mrs,,"map{0:0,1:1,2:1"
+mrs_1,MRT_Datenbank/mrs;MRT_Datenbank/mri_id,"map_if{0:0,1:1,2:1;1","map{0:0,1:1,2:1"
 mri_1_total_score
-mri_1_total_score_3,mritabel/MRIscore,copy_int
+mri_1_total_score_3,MRT_Datenbank/MRIscore,copy_int
 mri_1_total_score_2
 mri_1_additional
 mri_2_age_years,Überblick/Geburtsdatum;MRT/MRT 2 Datum,date_to_age
@@ -18,7 +18,7 @@ mri_2_dicom,MRT/Bilder?.1,copy_int
 mri_1_study_modality_2
 mri_2_index
 mri_2_index_comments
-mrs_2
+mrs_2,MRT_Datenbank/mrs;MRT_Datenbank/mri_id,"map_if{0:0,1:1,2:1;2"
 mri_2_total_score
 mri_2_total_score_3
 mri_2_total_score_2
@@ -30,7 +30,7 @@ mri_3_dicom,MRT/Bilder?.2,copy_int
 mri_1_study_modality_3
 mri_3_index
 mri_3_index_comments
-mrs_3
+mrs_3,MRT_Datenbank/mrs;MRT_Datenbank/mri_id,"map_if{0:0,1:1,2:1;3"
 mri_3_total_score
 mri_3_total_score_3
 mri_3_total_score_2
@@ -42,7 +42,7 @@ mri_4_dicom,MRT/Bilder?.3,copy_int
 mri_1_study_modality_4
 mri_4_index
 mri_4_index_comments
-mrs_4
+mrs_4,MRT_Datenbank/mrs;MRT_Datenbank/mri_id,"map_if{0:0,1:1,2:1;4"
 mri_4_total_score
 mri_4_total_score_3
 mri_4_total_score_2
@@ -54,7 +54,7 @@ mri_5_dicom,MRT/Bilder?.4,copy_int
 mri_1_study_modality_5
 mri_5_index
 mri_5_index_comments
-mrs_5
+mrs_5,MRT_Datenbank/mrs;MRT_Datenbank/mri_id,"map_if{0:0,1:1,2:1;5"
 mri_5_total_score
 mri_5_total_score_3
 mri_5_total_score_2
@@ -65,7 +65,7 @@ mri_6_year,MRT/MRT  6 Datum,date_to_year
 mri_6_dicom,MRT/Bilder?.5,copy_int
 mri_1_study_modality_6
 mri_6_index
-mri_6_index_comments
+mri_6_index_comments,,,no mrs for mri_6
 mri_6_reviewer_other_mld
 mri_6_total_score
 mri_6_total_score_3
@@ -78,7 +78,7 @@ mri_7_dicom,MRT/Bilder?.6,copy_int
 mri_1_study_modality_7
 mri_7_index
 mri_7_index_comments
-mrs_7
+mrs_7,MRT_Datenbank/mrs;MRT_Datenbank/mri_id,"map_if{0:0,1:1,2:1;7"
 mri_7_total_score
 mri_7_total_score_3
 mri_7_total_score_2
@@ -90,7 +90,7 @@ mri_8_dicom,MRT/Bilder?.7,copy_int
 mri_1_study_modality_8
 mri_8_index
 mri_8_index_comments
-mrs_8
+mrs_8,MRT_Datenbank/mrs;MRT_Datenbank/mri_id,"map_if{0:0,1:1,2:1;8"
 mri_8_total_score
 mri_8_total_score_3
 mri_8_total_score_2
@@ -102,7 +102,7 @@ mri_9_dicom,MRT/Bilder?.8,copy_int
 mri_1_study_modality_9
 mri_9_index
 mri_9_index_comments
-mrs_9
+mrs_9,MRT_Datenbank/mrs;MRT_Datenbank/mri_id,"map_if{0:0,1:1,2:1;9"
 mri_9_total_score
 mri_9_total_score_3
 mri_9_total_score_2
@@ -114,7 +114,7 @@ mri_10_dicom,MRT/Bilder?.9,copy_int
 mri_1_study_modality_10
 mri_10_index
 mri_10_index_comments
-mrs_10
+mrs_10,MRT_Datenbank/mrs;MRT_Datenbank/mri_id,"map_if{0:0,1:1,2:1;10"
 mri_10_total_score
 mri_10_total_score_3
 mri_10_total_score_2

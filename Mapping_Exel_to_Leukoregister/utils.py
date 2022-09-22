@@ -82,17 +82,48 @@ def mapping_operation(operation: str, data):
         return pd.DataFrame(list(
             map(functools.partial(compair_first_if_identical_second_else, choses=mapping_instruction), data.values)))
     elif operation == "date_to_year_with_condition":
-        return pd.DataFrame(list(map(functools.partial(date_to_year_with_condition, conditions=mapping_instruction), data.values))).astype('Int64')
+        return pd.DataFrame(list(
+            map(functools.partial(date_to_year_with_condition, conditions=mapping_instruction), data.values))).astype(
+            'Int64')
     elif operation == "copy_int_default":
-        return pd.DataFrame(list(map(functools.partial(copy_int_default, default=mapping_instruction), data.values))).astype('Int64')
+        return pd.DataFrame(
+            list(map(functools.partial(copy_int_default, default=mapping_instruction), data.values))).astype('Int64')
     elif operation == "default":
         return pd.DataFrame(list(map(functools.partial(default, default=mapping_instruction), data.values)))
     elif operation == "check_with_condition":
-        return pd.DataFrame(list(map(functools.partial(check_with_condition, condition=mapping_instruction), data.values)))
-    #elif operation == "date_to_age_months":
+        return pd.DataFrame(
+            list(map(functools.partial(check_with_condition, condition=mapping_instruction), data.values)))
+    elif operation == "map_if":
+        return pd.DataFrame(list(map(functools.partial(map_if, condition=mapping_instruction), data.values)))
+    # elif operation == "date_to_age_months":
     #    return pd.DataFrame(list(map(date_to_age_months, data.values)))
     else:
         raise ValueError("Unknown operation: {}".format(operation))
+
+
+def map_if(data, condition):
+    """
+    This function maps the data[0] to the condition is the same as data[1] only wroks for int
+    :param condition:
+    :param data:
+    :return:
+    """
+    condition = condition.split(";")
+    mapping_instruction = condition[0]
+    if_condition = condition[1]
+    if int(if_condition) != data[1]:
+        return None
+    if pd.isnull(data[0]):
+        return None
+    list_instructions = mapping_instruction.split(",")
+    for instruction in list_instructions:
+        split_instruction = instruction.split(":")
+        if split_instruction[0].isnumeric():
+            split_instruction[0] = int(split_instruction[0])
+        if split_instruction[0] == data[0]:
+            return split_instruction[1]
+    return default
+
 
 def check_with_condition(data, condition):
     """
@@ -139,6 +170,7 @@ def copy_int_default(data, default):
     assert isinstance(data, (int, float, np.int64))
     return int(data)
 
+
 def date_to_year_with_condition(data, conditions):
     """
     This function copies the data[0]  if the condition is the same as data[1].
@@ -151,10 +183,11 @@ def date_to_year_with_condition(data, conditions):
     conditions = conditions.split(",")
     for condition in conditions:
         if str(data[1]) == condition:
-            re =pd.to_datetime(data[0]).year
+            re = pd.to_datetime(data[0]).year
             return re
 
     return None
+
 
 def compair_first_if_identical_second_else(data, choses):
     """
@@ -419,10 +452,9 @@ def check(data, condition):
     """
 
     data = data[0]
-    if condition is  None:
+    if condition is None:
 
         if pd.isnull(data):
-
             return 99
         assert isinstance(data, (int, float, str))
         return 1
