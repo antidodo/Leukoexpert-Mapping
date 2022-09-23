@@ -24,9 +24,31 @@ def map_data(mapping_df, input_df, output_df):
         requierd_data_rows = row["exel"].split(";")
         mapped = mapping_operation(row["operation"], input_df[requierd_data_rows])
         # print("mapped: {}".format(mapped))
+        insert_value_to_output(input_df["Überblick/ID"], mapped, output_df)
         output_df[row["leukoregister"]] = mapped
+
     return output_df
 
+def insert_value_to_output(input_ids,mapped_values, output_df):
+    """
+    This function inserts the mapped values to the output df at same index as the input ids
+    :param input_ids:
+    :param mapped_values:
+    :param output_df:
+    :return:
+    """
+    insert_ids = []
+    insert_value = []
+    for index, id in enumerate(input_ids):
+        print(index)
+        print(id)
+    print(mapped_values)
+    print(input_ids)
+
+    #for row in zip(input_ids, mapped_values):
+    #    output_df.loc[row[0]] = row[1]
+
+    return output_df
 
 def mapping_operation(operation: str, data):
     """

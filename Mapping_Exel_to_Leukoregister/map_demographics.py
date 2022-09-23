@@ -1,5 +1,5 @@
 import pandas as pd
-from utils import map_data
+from utils import map_data, add_df_name_to_column_names
 
 def mapping_demographics(exel_file_path: str,output_df: pd.DataFrame) -> pd.DataFrame:
     """
@@ -8,6 +8,7 @@ def mapping_demographics(exel_file_path: str,output_df: pd.DataFrame) -> pd.Data
     """
     # get the data from the excel file
     exel_ueberblick_df = pd.read_excel(exel_file_path, sheet_name="Überblick", usecols="A:X")
+    exel_ueberblick_df = add_df_name_to_column_names(exel_ueberblick_df, "Überblick")
     # get the mapping rules from the maping csv
     mapping_df = pd.read_csv("mapping_csvs/demographics.csv")
     # map the data
