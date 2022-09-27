@@ -8,7 +8,7 @@ def mapping_developmental_milestones(exel_file_path: str,output_df: pd.DataFrame
     """
     exel_ueberblick_df = pd.read_excel(exel_file_path, sheet_name="Überblick", usecols="A:X")
     exel_ueberblick_df =add_df_name_to_column_names(exel_ueberblick_df, "Überblick")
-    exel_verlauf_df = pd.read_excel(exel_file_path, sheet_name="Entwicklung", usecols="A:AC")
+    exel_verlauf_df = pd.read_excel(exel_file_path, sheet_name="Entwicklung", usecols="A:M")
     exel_verlauf_df = add_df_name_to_column_names(exel_verlauf_df, "Entwicklung")
     exel_combind_df = pd.merge(exel_ueberblick_df, exel_verlauf_df, how='right', left_on='Überblick/ID', right_on='Entwicklung/ID')
     # get the mapping rules from the maping csv

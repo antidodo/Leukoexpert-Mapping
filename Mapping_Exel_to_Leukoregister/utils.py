@@ -24,30 +24,41 @@ def map_data(mapping_df, input_df, output_df):
         requierd_data_rows = row["exel"].split(";")
         mapped = mapping_operation(row["operation"], input_df[requierd_data_rows])
         # print("mapped: {}".format(mapped))
-        insert_value_to_output(input_df["Überblick/ID"], mapped, output_df)
-        output_df[row["leukoregister"]] = mapped
+        output_df = insert_value_to_output(input_df["Überblick/ID"], mapped, output_df, row["leukoregister"])
+        #output_df[row["leukoregister"]] = mapped
 
     return output_df
 
-def insert_value_to_output(input_ids,mapped_values, output_df):
+def insert_value_to_output(input_ids,mapped_values, output_df , insert_row):
     """
     This function inserts the mapped values to the output df at same index as the input ids
     :param input_ids:
     :param mapped_values:
     :param output_df:
+    :param insert_row:
     :return:
     """
+    # check if patient_id is empty if so return mapped_values
+    if insert_row == "patient_id":
+        output_df[insert_row] = mapped_values
+        return output_df
+
     insert_ids = []
     insert_value = []
-    for index, id in enumerate(input_ids):
-        print(index)
-        print(id)
-    print(mapped_values)
-    print(input_ids)
-
-    #for row in zip(input_ids, mapped_values):
-    #    output_df.loc[row[0]] = row[1]
-
+    mapped_values = mapped_values.to_numpy()
+    if len(mapped_values) > 1:
+        for index, id in enumerate(input_ids):
+            if id not in insert_ids:
+                insert_ids.append(id)
+                insert_value.append(mapped_values[index])
+            else:
+                #get index of the id in the insert_ids
+                index_of_id = insert_ids.index(id)
+                #check if the value is none or NaN
+                if pd.isnull(insert_value[index_of_id]):
+                    insert_value[index_of_id] = mapped_values[index]
+    for index, id in enumerate(insert_ids):
+        output_df.loc[output_df["patient_id"] == id, insert_row] = insert_value[index]
     return output_df
 
 def mapping_operation(operation: str, data):
