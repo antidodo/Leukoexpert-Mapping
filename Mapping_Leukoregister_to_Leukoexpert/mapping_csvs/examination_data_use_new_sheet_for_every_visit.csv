@@ -1,10 +1,10 @@
 leukoexpert,leukoregister,operation
-date_neuro_symp
-visit1_fir
+date_neuro_symp,encounter_year,,encounter_age_years
+visit1_fir,""
 physical_examination_neuro
-cog
-red_consciousness_confus
-cogloss
+cog,psych,copy
+red_consciousness_confus,psych_consc,copy
+cogloss,encounter_intelligence,"map{1:1,2:2,98:3,99:4"
 loc
 ii
 ic
