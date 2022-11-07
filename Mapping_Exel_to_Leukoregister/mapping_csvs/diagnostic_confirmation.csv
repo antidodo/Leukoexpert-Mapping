@@ -1,6 +1,6 @@
 exel,leukoregister,operation, notiz
 Überblick/Geburtsdatum;Überblick/D. Diagnose,age_confirmed_diagnosis,date_and_year_to_age, D.Diagnose when kein datum dann in genitetik/befunddatum dund in prersion geschätzt
-Überblick/Geburtsdatum;Überblick/D. Diagnose,age_confirmed_precision,precision_data_and_months
+Überblick/Geburtsdatum;Überblick/D. Diagnose,age_confirmed_precision,precision_data_and_months,standart als 2 für aproximate
 Überblick/D. Diagnose,age_confirmed_diagnosis_year,date_to_year,D.Diagnose when nicht eingetraren
 ,rise_diagnosis,
 ,dx_instructions,

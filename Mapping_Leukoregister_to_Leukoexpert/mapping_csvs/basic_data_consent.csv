@@ -1,0 +1,30 @@
+leukoexpert,leukoregister,operation
+record_id,,
+registry_inclusion,ic_present,"map{1:2,0:1"
+date_of_study_inclusion
+death,,
+cod,,
+year_death,,
+sex,gender,copy_int
+dob,birth_year,year_to_MM_YYYY
+eth___1
+eth___2
+eth___3
+eth___4
+eth___5
+eth___6
+eth___7
+eth___8
+eth___9
+eth___10
+eth___11
+eth___12
+eth___13
+specify_ethnicity
+diagnosis,???,,all with 2
+diagnosed_leuk,dx_details,"map{20:7,8:8,9:9,0"
+diff_diagnosis
+spec_diagnose
+aso,tte_neuro_decline_age_years,round_year
+fcl,birth_year/age_confirmed_diagnosis,age_to_years,ist mit fcl das yahr
+hem_spec,,

@@ -26,10 +26,11 @@ first_symptoms___8,Onset/Verhaltensauffälligkeiten_1,copy_int_default{0
 first_symptoms___9,Überblick/ID,default{0
 first_symptoms___10,Onset/Unruhe,copy_int_default{0
 first_symptoms___11,Überblick/ID,default{0
-first_symptoms___12,Onset/Epilepsie_1,copy_int_default{0
-first_symptoms___13,Onset/Augenbewegungsstörung_1,copy_int_default{0
-first_symptoms___14,Überblick/ID,default{0
+first_symptoms___12,Onset/Entwicklungsrückschritte_1,copy_int_default{0
+first_symptoms___13,Onset/Epilepsie_1,copy_int_default{0
+first_symptoms___14,Onset/Augenbewegungsstörung_1,copy_int_default{0
 first_symptoms___15,Überblick/ID,default{0
+first_symptoms___16,Überblick/ID,default{0
 first_symptoms___98,Überblick/ID,default{0
 first_symptoms___99,Überblick/ID,default{0
 first_symptoms_comments,,""

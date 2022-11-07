@@ -128,10 +128,27 @@ def mapping_operation(operation: str, data):
             list(map(functools.partial(check_with_condition, condition=mapping_instruction), data.values)))
     elif operation == "map_if":
         return pd.DataFrame(list(map(functools.partial(map_if, condition=mapping_instruction), data.values)))
+    elif operation == "date_and_year_to_age":
+        return pd.DataFrame(list(map(date_and_year_to_age, data.values)))
     # elif operation == "date_to_age_months":
     #    return pd.DataFrame(list(map(date_to_age_months, data.values)))
     else:
         raise ValueError("Unknown operation: {}".format(operation))
+
+def date_and_year_to_age(data):
+    """
+    This function calculates the age of the patient given the birth date and a year.
+    #TODO: check if the year is in the future
+    :param data:
+    :return:
+    """
+    birth_date = data[0]
+    year = data[1]
+    if pd.isnull(birth_date) or pd.isnull(year):
+        return None
+    age = year - birth_date.year
+    return age
+
 
 
 def map_if(data, condition):

@@ -1,5 +1,6 @@
 import pandas as pd
 import os
+import math
 from map import mapping
 
 def mapping_Leukoregister_to_Leukoexpert():
@@ -25,6 +26,7 @@ if __name__ == '__main__':
     """
     Maps the data from the Leukoregister to the Leukoexpert radcap csv
     """
-    mapping_Leukoregister_to_Leukoexpert()
+    #mapping_Leukoregister_to_Leukoexpert()
+    print(int(round(math.log(4, 2))))
 
 
