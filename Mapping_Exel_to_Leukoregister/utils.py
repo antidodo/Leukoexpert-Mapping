@@ -130,10 +130,24 @@ def mapping_operation(operation: str, data):
         return pd.DataFrame(list(map(functools.partial(map_if, condition=mapping_instruction), data.values)))
     elif operation == "date_and_year_to_age":
         return pd.DataFrame(list(map(date_and_year_to_age, data.values)))
+    elif operation == "check_if":
+        return pd.DataFrame(list(map(functools.partial(check_if, condition=mapping_instruction), data.values)))
     # elif operation == "date_to_age_months":
     #    return pd.DataFrame(list(map(date_to_age_months, data.values)))
     else:
         raise ValueError("Unknown operation: {}".format(operation))
+
+def check_if(data, condition):
+    """
+    This function checks if the value is in the condition.
+    :param condition:
+    :param value:
+    :return:
+    """
+    if str(data[0]) == str(condition[0]):
+        return 1
+    else:
+        return 0
 
 def date_and_year_to_age(data):
     """

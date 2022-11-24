@@ -3,7 +3,10 @@ mri_1_age_years,MRT_Datenbank/DOB;MRT_Datenbank/DOS,date_to_age,add date if mri_
 mri_1_age_years_precision,MRT_Datenbank/DOB;MRT_Datenbank/DOS,precision
 mri_1_year,MRT_Datenbank/DOS,date_to_year
 mri_1_dicom,MRT/Bilder?,copy_int
-mri_1_study_modality,MRT_Datenbank/sequence,"map{0:2,1:1,2:1,3:1","map{ 0:2(1,20,3):1"
+mri_1_study_modality__1,MRT_Datenbank/sequence;MRT_Datenbank/mri_id,"map_if{0:0,1:1,20:1,3:1;1","map{ 0:2(1,20,3):1"
+mri_1_study_modality__2,MRT_Datenbank/sequence;MRT_Datenbank/mri_id,"map_if{0:1,1:0,20:0,3:0;1",
+mri_1_study_modality__98,MRT_Datenbank/sequence;MRT_Datenbank/mri_id,"map_if{0:0,1:0,20:0,3:0;1",
+mri_1_study_modality__98,MRT_Datenbank/sequence;MRT_Datenbank/mri_id,"map_if{0:0,1:0,20:0,3:0;1",
 mri_1_index
 mri_1_index_comments
 mrs_1,MRT_Datenbank/mrs;MRT_Datenbank/mri_id,"map_if{0:0,1:1,2:1;1","map{0:0,1:1,2:1"
@@ -15,7 +18,10 @@ mri_2_age_years,MRT_Datenbank/DOB;MRT_Datenbank/DOS,date_to_age
 mri_2_age_years_precision,MRT_Datenbank/DOB;MRT_Datenbank/DOS,precision
 mri_2_year,MRT_Datenbank/DOS,date_to_year
 mri_2_dicom,MRT/Bilder?.1,copy_int
-mri_1_study_modality_2,,"map{0:2,1:1,20:1,3:1"
+mri_1_study_modality_2__1,MRT_Datenbank/sequence;MRT_Datenbank/mri_id,"map_if{0:0,1:1,20:1,3:1;2",
+mri_1_study_modality_2__2,MRT_Datenbank/sequence;MRT_Datenbank/mri_id,"map_if{0:1,1:0,20:0,3:0;2",
+mri_1_study_modality_2__98,MRT_Datenbank/sequence;MRT_Datenbank/mri_id,"map_if{0:0,1:0,20:0,3:0;2",
+mri_1_study_modality_2__98,MRT_Datenbank/sequence;MRT_Datenbank/mri_id,"map_if{0:0,1:0,20:0,3:0;2",
 mri_2_index
 mri_2_index_comments
 mrs_2,MRT_Datenbank/mrs;MRT_Datenbank/mri_id,"map_if{0:0,1:1,2:1;2"
@@ -27,7 +33,10 @@ mri_3_age_years,MRT_Datenbank/DOB;MRT_Datenbank/DOS,date_to_age
 mri_3_age_years_precision,MRT_Datenbank/DOB;MRT_Datenbank/DOS,precision
 mri_3_year,MRT_Datenbank/DOS,date_to_year
 mri_3_dicom,MRT/Bilder?.2,copy_int
-mri_1_study_modality_3
+mri_1_study_modality_3__1,MRT_Datenbank/sequence;MRT_Datenbank/mri_id,"map_if{0:0,1:1,20:1,3:1;3",
+mri_1_study_modality_3__2,MRT_Datenbank/sequence;MRT_Datenbank/mri_id,"map_if{0:1,1:0,20:0,3:0;3",
+mri_1_study_modality_3__98,MRT_Datenbank/sequence;MRT_Datenbank/mri_id,"map_if{0:0,1:0,20:0,3:0;3",
+mri_1_study_modality_3__98,MRT_Datenbank/sequence;MRT_Datenbank/mri_id,"map_if{0:0,1:0,20:0,3:0;3",
 mri_3_index
 mri_3_index_comments
 mrs_3,MRT_Datenbank/mrs;MRT_Datenbank/mri_id,"map_if{0:0,1:1,2:1;3"
@@ -39,7 +48,10 @@ mri_4_age_years,MRT_Datenbank/DOB;MRT_Datenbank/DOS,date_to_age
 mri_4_age_years_precision,MRT_Datenbank/DOB;MRT_Datenbank/DOS,precision
 mri_4_year,MRT_Datenbank/DOS,date_to_year
 mri_4_dicom,MRT/Bilder?.3,copy_int
-mri_1_study_modality_4
+mri_1_study_modality_4__1,MRT_Datenbank/sequence;MRT_Datenbank/mri_id,"map_if{0:0,1:1,20:1,3:1;4",
+mri_1_study_modality_4__2,MRT_Datenbank/sequence;MRT_Datenbank/mri_id,"map_if{0:1,1:0,20:0,3:0;4",
+mri_1_study_modality_4__98,MRT_Datenbank/sequence;MRT_Datenbank/mri_id,"map_if{0:0,1:0,20:0,3:0;4",
+mri_1_study_modality_4__98,MRT_Datenbank/sequence;MRT_Datenbank/mri_id,"map_if{0:0,1:0,20:0,3:0;4",
 mri_4_index
 mri_4_index_comments
 mrs_4,MRT_Datenbank/mrs;MRT_Datenbank/mri_id,"map_if{0:0,1:1,2:1;4"
@@ -51,7 +63,10 @@ mri_5_age_years,MRT_Datenbank/DOB;MRT_Datenbank/DOS,date_to_age
 mri_5_age_years_precision,MRT_Datenbank/DOB;MRT_Datenbank/DOS,precision
 mri_5_year,MRT_Datenbank/DOS,date_to_year
 mri_5_dicom,MRT/Bilder?.4,copy_int
-mri_1_study_modality_5
+mri_1_study_modality_5__1,MRT_Datenbank/sequence;MRT_Datenbank/mri_id,"map_if{0:0,1:1,20:1,3:1;5",
+mri_1_study_modality_5__2,MRT_Datenbank/sequence;MRT_Datenbank/mri_id,"map_if{0:1,1:0,20:0,3:0;5",
+mri_1_study_modality_5__98,MRT_Datenbank/sequence;MRT_Datenbank/mri_id,"map_if{0:0,1:0,20:0,3:0;5",
+mri_1_study_modality_5__98,MRT_Datenbank/sequence;MRT_Datenbank/mri_id,"map_if{0:0,1:0,20:0,3:0;5",
 mri_5_index
 mri_5_index_comments
 mrs_5,MRT_Datenbank/mrs;MRT_Datenbank/mri_id,"map_if{0:0,1:1,2:1;5"
@@ -63,7 +78,10 @@ mri_6_age_years,MRT_Datenbank/DOB;MRT_Datenbank/DOS,date_to_age
 mri_6_age_years_precision,MRT_Datenbank/DOB;MRT_Datenbank/DOS,precision
 mri_6_year,MRT_Datenbank/DOS,date_to_year
 mri_6_dicom,MRT/Bilder?.5,copy_int
-mri_1_study_modality_6
+mri_1_study_modality_6__1,MRT_Datenbank/sequence;MRT_Datenbank/mri_id,"map_if{0:0,1:1,20:1,3:1;6",
+mri_1_study_modality_6__2,MRT_Datenbank/sequence;MRT_Datenbank/mri_id,"map_if{0:1,1:0,20:0,3:0;6",
+mri_1_study_modality_6__98,MRT_Datenbank/sequence;MRT_Datenbank/mri_id,"map_if{0:0,1:0,20:0,3:0;6",
+mri_1_study_modality_6__98,MRT_Datenbank/sequence;MRT_Datenbank/mri_id,"map_if{0:0,1:0,20:0,3:0;6",
 mri_6_index
 mri_6_index_comments,,,""
 mrs_6,MRT_Datenbank/mrs;MRT_Datenbank/mri_id,"map_if{0:0,1:1,2:1;6"
@@ -71,12 +89,15 @@ mri_6_reviewer_other_mld
 mri_6_total_score
 mri_6_total_score_3
 mri_6_total_score_2
-mri_6_additional,,check_if{7
+mri_6_additional,MRT_Datenbank/mri_id,check_if{7
 mri_7_age_years,MRT_Datenbank/DOB;MRT_Datenbank/DOS,date_to_age
 mri_7_age_years_precision,MRT_Datenbank/DOB;MRT_Datenbank/DOS,precision
 mri_7_year,MRT_Datenbank/DOS,date_to_year
 mri_7_dicom,MRT/Bilder?.6,copy_int
-mri_1_study_modality_7
+mri_1_study_modality_7__1,MRT_Datenbank/sequence;MRT_Datenbank/mri_id,"map_if{0:0,1:1,20:1,3:1;7",
+mri_1_study_modality_7__2,MRT_Datenbank/sequence;MRT_Datenbank/mri_id,"map_if{0:1,1:0,20:0,3:0;7",
+mri_1_study_modality_7__98,MRT_Datenbank/sequence;MRT_Datenbank/mri_id,"map_if{0:0,1:0,20:0,3:0;7",
+mri_1_study_modality_7__98,MRT_Datenbank/sequence;MRT_Datenbank/mri_id,"map_if{0:0,1:0,20:0,3:0;7",
 mri_7_index
 mri_7_index_comments
 mrs_7,MRT_Datenbank/mrs;MRT_Datenbank/mri_id,"map_if{0:0,1:1,2:1;7"
@@ -88,7 +109,10 @@ mri_8_age_years,MRT_Datenbank/DOB;MRT_Datenbank/DOS,date_to_age
 mri_8_age_years_precision,MRT_Datenbank/DOB;MRT_Datenbank/DOS,precision
 mri_8_year,MRT_Datenbank/DOS,date_to_year
 mri_8_dicom,MRT/Bilder?.7,copy_int
-mri_1_study_modality_8
+mri_1_study_modality_8__1,MRT_Datenbank/sequence;MRT_Datenbank/mri_id,"map_if{0:0,1:1,20:1,3:1;8",
+mri_1_study_modality_8__2,MRT_Datenbank/sequence;MRT_Datenbank/mri_id,"map_if{0:1,1:0,20:0,3:0;8",
+mri_1_study_modality_8__98,MRT_Datenbank/sequence;MRT_Datenbank/mri_id,"map_if{0:0,1:0,20:0,3:0;8",
+mri_1_study_modality_8__98,MRT_Datenbank/sequence;MRT_Datenbank/mri_id,"map_if{0:0,1:0,20:0,3:0;8",
 mri_8_index
 mri_8_index_comments
 mrs_8,MRT_Datenbank/mrs;MRT_Datenbank/mri_id,"map_if{0:0,1:1,2:1;8"
@@ -100,7 +124,10 @@ mri_9_age_years,MRT_Datenbank/DOB;MRT_Datenbank/DOS,date_to_age
 mri_9_age_years_precision,MRT_Datenbank/DOB;MRT_Datenbank/DOS,precision
 mri_9_year,MRT_Datenbank/DOS,date_to_year
 mri_9_dicom,MRT/Bilder?.8,copy_int
-mri_1_study_modality_9
+mri_1_study_modality_9__1,MRT_Datenbank/sequence;MRT_Datenbank/mri_id,"map_if{0:0,1:1,20:1,3:1;9",
+mri_1_study_modality_9__2,MRT_Datenbank/sequence;MRT_Datenbank/mri_id,"map_if{0:1,1:0,20:0,3:0;9",
+mri_1_study_modality_9__98,MRT_Datenbank/sequence;MRT_Datenbank/mri_id,"map_if{0:0,1:0,20:0,3:0;9",
+mri_1_study_modality_9__98,MRT_Datenbank/sequence;MRT_Datenbank/mri_id,"map_if{0:0,1:0,20:0,3:0;9",
 mri_9_index
 mri_9_index_comments
 mrs_9,MRT_Datenbank/mrs;MRT_Datenbank/mri_id,"map_if{0:0,1:1,2:1;9"
@@ -112,7 +139,10 @@ mri_10_age_years,MRT_Datenbank/DOB;MRT_Datenbank/DOS,date_to_age
 mri_10_age_years_precision,MRT_Datenbank/DOB;MRT_Datenbank/DOS,precision
 mri_10_year,MRT_Datenbank/DOS,date_to_year
 mri_10_dicom,MRT/Bilder?.9,copy_int
-mri_1_study_modality_10
+mri_1_study_modality_10__1,MRT_Datenbank/sequence;MRT_Datenbank/mri_id,"map_if{0:0,1:1,20:1,3:1;10",
+mri_1_study_modality_10__2,MRT_Datenbank/sequence;MRT_Datenbank/mri_id,"map_if{0:1,1:0,20:0,3:0;10",
+mri_1_study_modality_10__98,MRT_Datenbank/sequence;MRT_Datenbank/mri_id,"map_if{0:0,1:0,20:0,3:0;10",
+mri_1_study_modality_10__98,MRT_Datenbank/sequence;MRT_Datenbank/mri_id,"map_if{0:0,1:0,20:0,3:0;10",
 mri_10_index
 mri_10_index_comments
 mrs_10,MRT_Datenbank/mrs;MRT_Datenbank/mri_id,"map_if{0:0,1:1,2:1;10"

@@ -27,7 +27,7 @@ def mapp_exel_to_leuko_register():
 
     output_df = mapping_demographics(excel_file_path,output_df)
     print("demographics mapped")
-    #output_df = mapping_mri_review(excel_file_path,mrt_database_file_path,output_df)
+    output_df = mapping_mri_review(excel_file_path,mrt_database_file_path,output_df)
     print("mri review mapped")
     output_df = mapping_first_symptoms(excel_file_path,output_df)
     print("first symptoms mapped")
