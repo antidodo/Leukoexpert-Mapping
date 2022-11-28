@@ -1,12 +1,12 @@
-map{0:2,1:1,99:3,98:3
+leukoexpert,leukoregister,operation,""
 date_neuro_symp,encounter_year,,encounter_age_years
 visit1_fir,""
 physical_examination_neuro
 cog,psych,copy
 red_consciousness_confus,psych_consc,copy
 cogloss,encounter_intelligence,"map{1:1,2:2,98:3,99:4"
-loc,,???
-ii,,???
+loc,,"",???
+ii,,"",???
 ic,behavior_adhs,copy
 fati,psych_fatigue,copy,in LE Fatigue HP:001237
 neuropsych___0,psych_aphasia,"map{1:1,2:0,3:0"
@@ -103,7 +103,7 @@ localisation_of_pain___4,sens_pain_local___4,"map{0:0,1:1"
 localisation_of_pain___5,sens_pain_local___5,"map{0:0,1:1"
 localisation_of_pain___6,patient_id,default{0
 comment_relating_to_sensor,sens_comments,copy_str
-cersy,encounter_truncal_ataxia;encounter_truncal_ataxia,"map_multi{(1,1):1,(0,0):2,(1,0):1,(0,1):1,(99,99):99,(99,1):1,(1,99):1,(98,98):3,(98,98):3,",muss noch bendet werden
+cersy,encounter_truncal_ataxia;encounter_app_ataxia,"map_multi{(1,1):1,(0,0):2,(1,0):1,(0,1):1,(99,99):3,(99,1):1,(1,99):1,(98,98):3,(98,99):3,(99,98):3,(98,1):1,(1,98):1,(99,0):3,(0,99):3,(98,0):3,(0,98):3"
 trem,tremor,"map{0:2,1:1,99:3,98:3"
 trem_type___1,,"map{0:2,1:1,99:3,98:3"
 trem_type___2
