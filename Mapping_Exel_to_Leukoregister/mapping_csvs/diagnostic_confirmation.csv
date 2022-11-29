@@ -1,6 +1,6 @@
 exel,leukoregister,operation, notiz
 Überblick/Geburtsdatum;Überblick/D. Diagnose,age_confirmed_diagnosis,date_and_year_to_age, D.Diagnose when kein datum dann in genitetik/befunddatum dund in prersion geschätzt
-Überblick/Geburtsdatum;Überblick/D. Diagnose,age_confirmed_precision,precision_data_and_months,standart als 2 für aproximate
+Überblick/Geburtsdatum;Überblick/D. Diagnose,age_confirmed_diagnosis_precision,precision_data_and_months,standart als 2 für aproximate
 Überblick/D. Diagnose,age_confirmed_diagnosis_year,date_to_year,D.Diagnose when nicht eingetraren
 ,rise_diagnosis,
 ,dx_instructions,
@@ -48,7 +48,8 @@ Biochemie/Sulfatide,biochem_dx_test_details___2,"map{ja:1,0",check
 ,arsa_dx_age_years,
 ,arsa_dx_age_years_precision,
 ,arsa_dx_year,
-Biochemie/ARSA Wert;Biochemie/Quelle,arsa_dx_activity,copy_with_condition{Tü,wenn quelle Tü dannd den wertkopiern ansosen nicht
+,arsa_dx_activity_unit,,TODO
+Biochemie/ARSA Wert;Biochemie/Quelle,arsa_dx_activity_unit_value,copy_with_condition{Tü,wenn quelle Tü dannd den wertkopiern ansosen nicht
 ,arsa_dx_refrange_lower,
 ,arsa_dx_refrange_upper,
 ,sulfatide_dx_age_years,

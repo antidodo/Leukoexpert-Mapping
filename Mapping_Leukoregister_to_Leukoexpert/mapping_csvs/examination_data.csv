@@ -1,5 +1,5 @@
 leukoexpert,leukoregister,operation,""
-date_neuro_symp,encounter_year,,encounter_age_years
+date_neuro_symp,"birth_year,encounter_age_years",yob_and_age_to_date,encounter_age_years
 visit1_fir,""
 physical_examination_neuro
 cog,psych,copy

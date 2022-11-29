@@ -79,10 +79,19 @@ def mapping_operation(operation: str, data):
             map(functools.partial(compair_first_if_identical_second_else, choses=mapping_instruction), data.values)))
     elif operation == "date_to_year_with_condition":
         return pd.DataFrame(list(map(functools.partial(date_to_year_with_condition, conditions=mapping_instruction), data.values))).astype('Int64')
-    elif operation == "date_to_age_months":
-        return pd.DataFrame(list(map(date_to_age_months, data.values)))
+    elif operation == "yob_and_age_to_date":
+        return pd.DataFrame(list(map(functools.partial(yob_and_age_to_date), data.values))).astype('Int64')
     else:
         raise ValueError("Unknown operation: {}".format(operation))
+def yob_and_age_to_date(data):
+    """
+    This function returns the date day month year from the date of birth and age.
+    :param data:
+    :return:
+    """
+    #TODO
+    raise ValueError("not implemented yet")
+
 
 def date_to_year_with_condition(data, conditions):
     """

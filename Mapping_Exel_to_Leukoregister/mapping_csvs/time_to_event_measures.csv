@@ -329,9 +329,9 @@ tte_axial_hypotonia_year
 tte_axial_hypotonia_comments
 tte_spasticity_age_years,Verlauf/Spastik,months_to_year
 tte_spasticity_age_precision,Überblick/Geburtsdatum;Verlauf/Spastik,precision_data_and_months
-tte_spasticity_lower_age_year,Überblick/Geburtsdatum;Verlauf/Spastik,months_to_date_year
-tte_spasticity_lower_onset
-tte_spasticity_lower_comments
+tte_spasticity_age_year,Überblick/Geburtsdatum;Verlauf/Spastik,months_to_date_year
+tte_spasticity_onset
+tte_spasticity_comments
 tte_ataxia_age_years,Verlauf/Ataxie,months_to_year
 tte_ataxia_age_years_precision,Überblick/Geburtsdatum;Verlauf/Ataxie,precision_data_and_months
 tte_ataxia_comments
@@ -506,12 +506,12 @@ tte_structural_abn
 tte_otitis_media
 tte_bone_abn
 tte_gallbladder
-tte_gmfc_score__1,Verlauf/Status 1,"map{1:1,0:0,2:0,99",""
-tte_gmfc_score__2,Verlauf/Status 2,"map{1:1,0:0,2:0,99"
-tte_gmfc_score__3,Verlauf/Status 3,"map{1:1,0:0,2:0,99"
-tte_gmfc_score__4,Verlauf/Status 4,"map{1:1,0:0,2:0,99"
-tte_gmfc_score__5,Verlauf/Status 5,"map{1:1,0:0,2:0,99"
-tte_gmfc_score__6,Verlauf/Status 6,"map{1:1,0:0,2:0,99"
+tte_gmfc_score___1,Verlauf/Status 1,"map{1:1,0:0,2:0,99",""
+tte_gmfc_score___2,Verlauf/Status 2,"map{1:1,0:0,2:0,99"
+tte_gmfc_score___3,Verlauf/Status 3,"map{1:1,0:0,2:0,99"
+tte_gmfc_score___4,Verlauf/Status 4,"map{1:1,0:0,2:0,99"
+tte_gmfc_score___5,Verlauf/Status 5,"map{1:1,0:0,2:0,99"
+tte_gmfc_score___6,Verlauf/Status 6,"map{1:1,0:0,2:0,99"
 tte_gmfc_score_m1_age_years,Verlauf/GMFC 1,months_to_year
 tte_gmfc_score_m1_age_years_precision,Überblick/Geburtsdatum;Verlauf/GMFC 1,precision_data_and_months
 tte_gmfc_score_m1_year,Überblick/Geburtsdatum;Verlauf/GMFC 1,months_to_date_year
