@@ -506,6 +506,24 @@ tte_structural_abn
 tte_otitis_media
 tte_bone_abn
 tte_gallbladder
+tte_two_word
+tte_single_word
+tte_complete_loss_language
+tte_two_word_age_years
+tte_two_word_age_years_precision
+tte_two_word_year_alert
+tte_two_word_death_alert
+tte_two_word_year
+tte_single_word_age_years
+tte_single_word_age_years_precision
+tte_single_word_year_alert
+tte_single_word_death_alert,,,world has to be addedfrom exel
+tte_single_word_year
+tte_complete_loss_language_age_years
+tte_complete_loss_language_age_years_precision
+tte_complete_loss_language_year_alert
+tte_complete_loss_language_death_alert
+tte_complete_loss_language_year
 tte_gmfc_score___1,Verlauf/Status 1,"map{1:1,0:0,2:0,99",""
 tte_gmfc_score___2,Verlauf/Status 2,"map{1:1,0:0,2:0,99"
 tte_gmfc_score___3,Verlauf/Status 3,"map{1:1,0:0,2:0,99"

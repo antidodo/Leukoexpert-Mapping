@@ -1,5 +1,5 @@
 visit_felds,origin,age_check_feald,operation,coments
-encounter_type,"",,default{0
+encounter_type,"",,default{2
 encounter_age_years,"",,defind_age
 encounter_age_years_precision,"",,default{1
 encounter_year,birth_year,"",year_by_age
